@@ -460,9 +460,8 @@ section#aboutme{
             height: 540px;
 
             @media #{$mobile}{
-              width: 750px;
+              width: 110%;
               height: 860px;
-              margin: -30px 0 0 -80px;
             }
           }
         }//end of .myphoto
@@ -2331,7 +2330,7 @@ section#contact{
       >h2{
         position: absolute;
         left: 75px;
-        top: 45px;
+        top: 35px;
         font-size: $subTitle;
         font-weight: 500;
 
@@ -2359,13 +2358,16 @@ section#contact{
       >p{
         position: absolute;
         left: 610px;
-        top: 40px;
+        top: 30px;
+        height: 120px;
         font-size: $contTitle;
         line-height: 1.7em;
         
         @media #{$mobile}{
           position: initial;
+          height: 150px;
           margin-top: 10px;
+          // padding-bottom: 30px;
         }
       }
     }//end of .help

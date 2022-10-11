@@ -430,9 +430,8 @@ section#aboutme > .container > .profile > div > .myphoto > img {
 }
 @media screen and (max-width:640px) {
   section#aboutme > .container > .profile > div > .myphoto > img {
-    width: 750px;
+    width: 110%;
     height: 860px;
-    margin: -30px 0 0 -80px;
   }
 }
 section#aboutme > .container > .profile > div > ol {
@@ -2140,7 +2139,7 @@ section#contact > .apply > .help {
 section#contact > .apply > .help > h2 {
   position: absolute;
   left: 75px;
-  top: 45px;
+  top: 35px;
   font-size: 32px;
   font-weight: 500;
 }
@@ -2167,13 +2166,15 @@ section#contact > .apply > .help > h2:after {
 section#contact > .apply > .help > p {
   position: absolute;
   left: 610px;
-  top: 40px;
+  top: 30px;
+  height: 120px;
   font-size: 18px;
   line-height: 1.7em;
 }
 @media screen and (max-width:640px) {
   section#contact > .apply > .help > p {
     position: initial;
+    height: 150px;
     margin-top: 10px;
   }
 }
