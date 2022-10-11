@@ -2318,14 +2318,14 @@ section#contact{
 
     >.help{
       position: relative;
-      height: 170px;
+      height: 110px;
       margin-bottom: 10px;
       border-bottom: 1px solid #e4e4e4;
       
     @media #{$mobile}{ 
       position: initial;     
       width: 90%;
-      height: 190px;
+      height: 200px;
       margin: 0 auto;
     }
 
