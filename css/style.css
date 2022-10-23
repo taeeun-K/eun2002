@@ -1,4 +1,10 @@
 @charset "UTF-8";
+@font-face {
+  font-family: "MonoplexKR-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_Monoplex-kr@1.0/MonoplexKR-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
 @-webkit-keyframes mousewheel {
   0% {
     top: 5px;
@@ -27,6 +33,10 @@
     opacity: 0;
   }
 }
+body {
+  font-family: "MonoplexKR-Regular";
+}
+
 #wrap {
   position: relative;
   min-width: 1200px;
@@ -371,6 +381,11 @@ header ~ section > h2:after {
   content: "";
 }
 
+@media screen and (max-width:640px) {
+  section#aboutme {
+    width: 100%;
+  }
+}
 section#aboutme > .container {
   display: flex;
   flex-flow: row-reverse nowrap;
@@ -417,21 +432,22 @@ section#aboutme > .container > .profile > div > .myphoto {
   overflow: hidden;
   background-image: url(./../images/aboutme/photo-frame.png);
   background-position: center bottom;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 section#aboutme > .container > .profile > div > .myphoto > img {
   display: block;
   position: relative;
   z-index: -1;
-  margin: -10px 0 0 -15px;
-  width: 400px;
-  height: 540px;
+  margin: -15px 0 0 0;
+  width: 360px;
+  height: 500px;
 }
 @media screen and (max-width:640px) {
   section#aboutme > .container > .profile > div > .myphoto > img {
     width: 110%;
     height: 860px;
+    margin: -15px 0 0 -30px;
   }
 }
 section#aboutme > .container > .profile > div > ol {
@@ -439,7 +455,7 @@ section#aboutme > .container > .profile > div > ol {
 }
 section#aboutme > .container > .profile > div > ol > li {
   height: 45px;
-  font-weight: 300;
+  font-weight: 500;
   font-size: 16px;
   line-height: 45px;
   border-bottom: 1px solid #eee;
@@ -473,7 +489,7 @@ section#aboutme > .container > .biography > .detail > h3 {
 section#aboutme > .container > .biography > .detail > p {
   margin-bottom: 20px;
   font-size: 14px;
-  font-weight: 300;
+  font-weight: 500;
 }
 @media screen and (max-width:640px) {
   section#aboutme > .container > .biography > .detail > p > br {
@@ -504,100 +520,6 @@ section#aboutme > .container > .biography > .detail > .ican > li:before {
   color: #52B3D9;
   font-family: "Font Awesome 5 Free";
   content: "\f14a";
-}
-section#aboutme > .workstyle {
-  width: 100%;
-  margin-top: 24px;
-  background-color: #2C3E50;
-}
-@media screen and (max-width:640px) {
-  section#aboutme > .workstyle {
-    margin-top: 0;
-  }
-}
-section#aboutme > .workstyle > .container {
-  position: relative;
-  width: 1100px;
-  height: 120px;
-  margin: 0 auto;
-}
-@media screen and (max-width:640px) {
-  section#aboutme > .workstyle > .container {
-    width: 100%;
-    margin: 0;
-  }
-}
-section#aboutme > .workstyle > .container:after {
-  display: block;
-  position: absolute;
-  left: 120px;
-  top: 20px;
-  width: 67px;
-  height: 60px;
-  background-image: url(../images/aboutme/audio.gif);
-  content: "";
-}
-@media screen and (max-width:640px) {
-  section#aboutme > .workstyle > .container:after {
-    display: none;
-  }
-}
-section#aboutme > .workstyle > .container > ol {
-  position: absolute;
-  left: 130px;
-  top: 15px;
-  width: 560px;
-  height: 105px;
-  font-size: 16px;
-}
-@media screen and (max-width:640px) {
-  section#aboutme > .workstyle > .container > ol {
-    position: initial;
-    width: 100%;
-    height: initial;
-    padding-top: 15px;
-  }
-}
-section#aboutme > .workstyle > .container > ol:before, section#aboutme > .workstyle > .container > ol:after {
-  display: block;
-  position: absolute;
-  width: 300px;
-  margin-left: 300px;
-  color: #fff;
-  font-weight: 300;
-  font-size: 16px;
-  letter-spacing: 0.1em;
-}
-@media screen and (max-width:640px) {
-  section#aboutme > .workstyle > .container > ol:before, section#aboutme > .workstyle > .container > ol:after {
-    display: none;
-  }
-}
-section#aboutme > .workstyle > .container > ol:before {
-  left: 55%;
-  top: 20px;
-  content: "하는";
-}
-section#aboutme > .workstyle > .container > ol:after {
-  left: 60%;
-  top: 60px;
-  content: "코딩 스타일을 좋아합니다!";
-}
-section#aboutme > .workstyle > .container > ol > li {
-  color: #fff;
-  font-weight: 300;
-  line-height: 30px;
-  text-align: right;
-  letter-spacing: 0.1em;
-}
-@media screen and (max-width:640px) {
-  section#aboutme > .workstyle > .container > ol > li {
-    text-align: center;
-  }
-}
-section#aboutme > .workstyle > .container > ol > li > span {
-  color: #ffc90e;
-  font-weight: 400;
 }
 section#aboutme > .talk {
   background-image: url(./../images/aboutme/bg_talk.jpg);
@@ -631,7 +553,7 @@ section#aboutme > .talk > ul > li {
   padding: 0 2%;
   background-color: #fff;
   border: 1px solid #ccc;
-  border-radius: 16px;
+  border-radius: 100px;
   box-sizing: border-box;
 }
 @media screen and (max-width:640px) {
@@ -653,7 +575,7 @@ section#aboutme > .talk > ul > li > h4 {
   margin-left: 30px;
   padding: 5px 10px 5px 30px;
   color: #fff;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: 3px;
   /*자동줄바꿈 안됨*/
   white-space: nowrap;
@@ -735,7 +657,7 @@ section#skill > article.skill-1 {
 }
 section#skill > article > h3 {
   margin-bottom: 80px;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 32px;
   line-height: 48px;
   text-align: center;
@@ -781,7 +703,7 @@ section#skill > article > ol > li {
 }
 section#skill > article > ol > li > h4 {
   margin-bottom: 30px;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 24px;
 }
 section#skill > article > ol > li > p {
@@ -1038,14 +960,18 @@ section#ability > .resume > div > .iam > .shadow > .clse {
 }
 
 section#uxdesign {
-  width: 1200px;
+  width: 100%;
   margin: 0 auto;
+  background: #222;
 }
 @media screen and (max-width:640px) {
   section#uxdesign {
     width: 100%;
     margin: 0;
   }
+}
+section#uxdesign > h2 {
+  color: #fff;
 }
 section#uxdesign > .slides {
   overflow: hidden;
@@ -1158,6 +1084,7 @@ section#uxdesign > .intro > h3 {
   margin-bottom: 56px;
   font-size: 32px;
   text-align: center;
+  color: #fff;
   font-weight: 500;
 }
 @media screen and (max-width:640px) {
@@ -1170,7 +1097,7 @@ section#uxdesign > .intro > h3 {
 section#uxdesign > .intro > h3:before {
   display: block;
   position: absolute;
-  left: 0;
+  left: 20%;
   top: 0;
   width: 48px;
   height: 86px;
@@ -1180,7 +1107,7 @@ section#uxdesign > .intro > h3:before {
 section#uxdesign > .intro > h3:after {
   display: block;
   position: absolute;
-  right: 0;
+  right: 20%;
   top: 180px;
   width: 58px;
   height: 156px;
@@ -1196,6 +1123,7 @@ section#uxdesign > .intro > p {
   width: 664px;
   margin: 0 auto 80px;
   line-height: 30px;
+  color: #fff;
 }
 @media screen and (max-width:640px) {
   section#uxdesign > .intro > p {
@@ -1211,246 +1139,44 @@ section#uxdesign > .intro > p > span {
   margin-bottom: 30px;
 }
 section#uxdesign > .intro > p > strong {
-  font-weight: 400;
+  font-weight: 500;
 }
-section#uxdesign > .intro .bus-alarm {
+section#uxdesign > .intro .umbrella-uiux {
   display: flex;
 }
 @media screen and (max-width:640px) {
-  section#uxdesign > .intro .bus-alarm {
+  section#uxdesign > .intro .umbrella-uiux {
     flex-direction: column-reverse;
   }
 }
-section#uxdesign > .intro .bus-alarm > h4 {
+section#uxdesign > .intro .umbrella-uiux > h4 {
   width: 43%;
   align-self: flex-end;
   text-align: right;
   margin-right: 20px;
-  font-weight: 400;
+  font-weight: 500;
+  color: #fff;
   font-size: 16px;
 }
 @media screen and (max-width:640px) {
-  section#uxdesign > .intro .bus-alarm > h4 {
+  section#uxdesign > .intro .umbrella-uiux > h4 {
     width: 100%;
     margin-right: 0;
     text-align: center;
   }
 }
-section#uxdesign > .intro .bus-alarm > .frame {
+section#uxdesign > .intro .umbrella-uiux > .frame {
   width: 527px;
 }
 @media screen and (max-width:640px) {
-  section#uxdesign > .intro .bus-alarm > .frame {
+  section#uxdesign > .intro .umbrella-uiux > .frame {
     width: 90%;
     margin: 0 auto 10px;
   }
 }
-section#uxdesign > .intro .bus-alarm > .frame > img {
+section#uxdesign > .intro .umbrella-uiux > .frame > img {
   display: block;
   width: 100%;
-}
-section#uxdesign > .uxui {
-  width: 1200px;
-  position: relative;
-  padding-bottom: 104px;
-}
-@media screen and (max-width:640px) {
-  section#uxdesign > .uxui {
-    width: 100%;
-  }
-}
-section#uxdesign > .uxui > h3 {
-  position: relative;
-  width: 330px;
-  margin: 0 auto 156px;
-  padding-bottom: 8px;
-  font-weight: 500;
-  font-size: 32px;
-  text-align: center;
-  border-bottom: 2px solid #f0f0f0;
-}
-@media screen and (max-width:640px) {
-  section#uxdesign > .uxui > h3 {
-    margin-bottom: 50px;
-  }
-}
-section#uxdesign > .uxui > h3:before, section#uxdesign > .uxui > h3:after {
-  display: block;
-  position: absolute;
-  top: 130px;
-  color: #52B3D9;
-  font-size: 36px;
-  font-weight: 800;
-  transition: ease-out 0.3s;
-}
-section#uxdesign > .uxui > h3:before {
-  left: 50%;
-  margin-left: -200px;
-  content: "UI";
-}
-@media screen and (max-width:640px) {
-  section#uxdesign > .uxui > h3:before {
-    top: 210px;
-    width: 40px;
-    margin-left: -20px;
-    font-size: 24px;
-    text-align: center;
-  }
-}
-section#uxdesign > .uxui > h3:after {
-  right: 50%;
-  margin-right: -200px;
-  content: "UX";
-}
-@media screen and (max-width:640px) {
-  section#uxdesign > .uxui > h3:after {
-    top: 520px;
-    width: 40px;
-    margin-right: -20px;
-    font-size: 24px;
-    text-align: center;
-  }
-}
-@media screen and (max-width:640px) {
-  section#uxdesign > .uxui > .container {
-    display: flex;
-    justify-content: center;
-  }
-}
-section#uxdesign > .uxui > .container > .uxui-case {
-  display: flex;
-  position: relative;
-}
-@media screen and (max-width:640px) {
-  section#uxdesign > .uxui > .container > .uxui-case {
-    display: flex;
-    flex-flow: column;
-    width: 40%;
-    height: initial;
-  }
-  section#uxdesign > .uxui > .container > .uxui-case:first-child {
-    margin-right: 30px;
-  }
-  section#uxdesign > .uxui > .container > .uxui-case:last-child {
-    margin-left: 30px;
-  }
-}
-section#uxdesign > .uxui > .container > .uxui-case > .ui-frame {
-  display: block;
-  position: absolute;
-  left: 50%;
-  width: 420px;
-  height: 280px;
-  margin-left: -420px;
-  transition: ease-out 0.3s;
-  z-index: 300;
-}
-@media screen and (max-width:640px) {
-  section#uxdesign > .uxui > .container > .uxui-case > .ui-frame {
-    order: 100;
-    position: initial;
-    width: 100%;
-    height: auto;
-    margin: 0;
-  }
-}
-section#uxdesign > .uxui > .container > .uxui-case > .ui-frame > img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  border-radius: 140px 0 0 140px;
-}
-@media screen and (max-width:640px) {
-  section#uxdesign > .uxui > .container > .uxui-case > .ui-frame > img {
-    border-radius: 150px 150px 0 0;
-  }
-}
-section#uxdesign > .uxui > .container > .uxui-case > .ux-frame {
-  display: block;
-  position: absolute;
-  right: 50%;
-  width: 420px;
-  height: 280px;
-  margin-right: -420px;
-  transition: ease-out 0.3s;
-  z-index: 300;
-}
-@media screen and (max-width:640px) {
-  section#uxdesign > .uxui > .container > .uxui-case > .ux-frame {
-    position: initial;
-    width: 100%;
-    height: auto;
-    margin: 0;
-    order: 300;
-  }
-}
-section#uxdesign > .uxui > .container > .uxui-case > .ux-frame > img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  border-radius: 0 140px 140px 0;
-}
-@media screen and (max-width:640px) {
-  section#uxdesign > .uxui > .container > .uxui-case > .ux-frame > img {
-    border-radius: 0 0 150px 150px;
-  }
-}
-section#uxdesign > .uxui > .container > .uxui-case:hover > .ui-frame {
-  left: 0;
-  margin-left: 0;
-  transition: ease-out 0.3s;
-}
-section#uxdesign > .uxui > .container > .uxui-case:hover > .ux-frame {
-  right: 0;
-  margin-right: 0;
-  transition: ease-out 0.3s;
-}
-section#uxdesign > .uxui > .container > .uxui-case > dl {
-  width: 40%;
-  height: 280px;
-  margin: 0 auto;
-  padding-top: 80px;
-  text-align: center;
-  background-color: #dbdbdb;
-  box-sizing: border-box;
-}
-@media screen and (max-width:640px) {
-  section#uxdesign > .uxui > .container > .uxui-case > dl {
-    order: 200;
-    width: 100%;
-    padding-left: 10px;
-    padding-right: 10px;
-    box-sizing: border-box;
-  }
-}
-section#uxdesign > .uxui > .container > .uxui-case > dl > dt {
-  color: #404040;
-  font-size: 22px;
-  font-weight: 600;
-}
-@media screen and (max-width:640px) {
-  section#uxdesign > .uxui > .container > .uxui-case > dl > dt {
-    font-size: 18px;
-  }
-}
-section#uxdesign > .uxui > .container > .uxui-case > dl > dd {
-  margin-top: 30px;
-  color: #404040;
-  font-size: 13px;
-  line-height: 24px;
-}
-@media screen and (max-width:640px) {
-  section#uxdesign > .uxui > .container > .uxui-case > dl > dd br {
-    display: none;
-  }
-}
-section#uxdesign > .uxui > .container > .uxui-case:nth-of-type(2) {
-  margin-top: 30px;
-}
-@media screen and (max-width:640px) {
-  section#uxdesign > .uxui > .container > .uxui-case:nth-of-type(2) {
-    margin-top: initial;
-  }
 }
 
 section#portfolio > article {
@@ -1477,7 +1203,7 @@ section#portfolio > .slides > .slides-pagination {
   display: flex;
   justify-content: space-around;
   width: 840px;
-  margin: 0 auto 96px;
+  margin: 0 auto 30px;
 }
 @media screen and (max-width:640px) {
   section#portfolio > .slides > .slides-pagination {
@@ -1504,7 +1230,7 @@ section#portfolio > .slides > .slides-pagination > li {
 section#portfolio > .slides > .slides-pagination > li > a {
   display: block;
   height: 40px;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 14px;
   line-height: 40px;
   text-align: center;
@@ -1576,7 +1302,7 @@ section#portfolio > .slides > .slides-container > figure > figcaption > .tools,
 section#portfolio > .slides > .slides-container > figure > figcaption > .etc {
   margin-top: 20px;
   color: #404040;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 24px;
 }
 section#portfolio > .slides > .slides-container > figure > figcaption > .desc > span,
@@ -1602,7 +1328,7 @@ section#portfolio > .slides > .slides-container > figure > figcaption > .btn > a
   width: 132px;
   height: 40px;
   margin-top: 30px;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 15px;
   line-height: 38px;
   letter-spacing: 2px;
@@ -1707,302 +1433,13 @@ section#portfolio > .slides > a.next {
     text-indent: -9999px;
   }
 }
-section#portfolio > .intro {
-  width: 100%;
-  background-image: url(./../images/portfolio/bg_pofol.png);
-  background-size: cover;
-}
-section#portfolio > .intro .container {
-  width: 1200px;
-  margin: 0 auto;
-  padding: 80px 0;
-}
-@media screen and (max-width:640px) {
-  section#portfolio > .intro .container {
-    width: 100%;
-  }
-}
-section#portfolio > .intro .container > h3 {
-  position: relative;
-  margin-bottom: 56px;
-  font-size: 32px;
-  text-align: center;
-  font-weight: 500;
-}
-section#portfolio > .intro .container > h3:before {
-  display: block;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 48px;
-  height: 86px;
-  background-image: url(./../images/deocBlockTransparent.png);
-  content: "";
-}
-section#portfolio > .intro .container > h3:after {
-  display: block;
-  position: absolute;
-  right: 0;
-  top: 180px;
-  width: 58px;
-  height: 156px;
-  background-image: url(./../images/decoBlockBlue.png);
-  content: "";
-}
-@media screen and (max-width:640px) {
-  section#portfolio > .intro .container > h3:before, section#portfolio > .intro .container > h3:after {
-    display: none;
-  }
-  section#portfolio > .intro .container > h3 > span {
-    display: block;
-  }
-}
-section#portfolio > .intro .container > p {
-  width: 664px;
-  margin: 0 auto 80px;
-  line-height: 30px;
-}
-@media screen and (max-width:640px) {
-  section#portfolio > .intro .container > p {
-    width: 90%;
-    margin-bottom: 20px;
-  }
-}
-section#portfolio > .intro .container > p > span {
-  display: block;
-  margin-bottom: 30px;
-}
-@media screen and (max-width:640px) {
-  section#portfolio > .intro .container > p > span {
-    display: initial;
-  }
-  section#portfolio > .intro .container > p > span br {
-    display: none;
-  }
-}
-section#portfolio > .intro .container > p > strong {
-  font-weight: 400;
-}
-section#portfolio > .intro .container > .coding > h4 {
-  overflow: hidden;
-  position: relative;
-  height: 300px;
-  margin-bottom: 104px;
-}
-@media screen and (max-width:640px) {
-  section#portfolio > .intro .container > .coding > h4 {
-    width: 90%;
-    margin: 0 auto 50px;
-    text-align: center;
-  }
-}
-section#portfolio > .intro .container > .coding > h4 > span {
-  position: absolute;
-  left: 240px;
-  bottom: 0;
-}
-@media screen and (max-width:640px) {
-  section#portfolio > .intro .container > .coding > h4 > span {
-    left: 0;
-    bottom: -30px;
-    width: 100%;
-    text-align: center;
-  }
-}
-section#portfolio > .intro .container > .coding > h4:after {
-  display: block;
-  position: absolute;
-  right: 35px;
-  bottom: 0;
-  z-index: -1;
-  width: 470px;
-  height: 300px;
-  background-image: url(./../images/portfolio/code01.png);
-  content: "";
-}
-@media screen and (max-width:640px) {
-  section#portfolio > .intro .container > .coding > h4:after {
-    width: 100%;
-    right: 50%;
-    margin-right: -50%;
-  }
-}
-section#portfolio > .intro .container > .coding > h4 > .circle {
-  position: absolute;
-  left: 95%;
-  bottom: 0px;
-}
-section#portfolio > .intro .container > .coding > h4 > .circle > .ring {
-  position: absolute;
-  border: 2px solid #52B3D9;
-  border-radius: 200px;
-}
-section#portfolio > .intro .container > .coding > h4 > .circle > .ring.ring_1 {
-  left: 0;
-  top: 0px;
-  width: 45px;
-  height: 45px;
-  opacity: 0.7;
-}
-section#portfolio > .intro .container > .coding > h4 > .circle > .ring.ring_2 {
-  left: -16px;
-  top: -16px;
-  width: 77px;
-  height: 77px;
-  opacity: 0.6;
-}
-section#portfolio > .intro .container > .coding > h4 > .circle > .ring.ring_3 {
-  left: -32px;
-  top: -32px;
-  width: 109px;
-  height: 109px;
-  opacity: 0.5;
-}
-section#portfolio > .intro .container > .coding > h4 > .circle > .ring.ring_4 {
-  left: -48px;
-  top: -48px;
-  width: 141px;
-  height: 141px;
-  opacity: 0.4;
-}
-section#portfolio > .intro .container > .coding > h4 > .circle > .ring.ring_5 {
-  left: -64px;
-  top: -64px;
-  width: 173px;
-  height: 173px;
-  opacity: 0.3;
-}
-section#portfolio > .intro .container > .coding > h4 > .circle > .ring.ring_6 {
-  left: -80px;
-  top: -80px;
-  width: 205px;
-  height: 205px;
-  opacity: 0.2;
-}
-section#portfolio > .intro .container > .coding > h4 > .circle > .ring.ring_7 {
-  left: -96px;
-  top: -96px;
-  width: 237px;
-  height: 237px;
-  opacity: 0.1;
-}
-section#portfolio > .intro .container > .coding > div {
-  position: relative;
-  height: 436px;
-  padding-left: 550px;
-  background-image: url(./../images/portfolio/code02.png);
-  background-position: 50px 0;
-  background-repeat: no-repeat;
-  box-sizing: border-box;
-}
-@media screen and (max-width:640px) {
-  section#portfolio > .intro .container > .coding > div {
-    width: 90%;
-    margin: 0 auto;
-    height: auto;
-    padding: 0 0 460px;
-    background-position: 0 bottom;
-  }
-}
-section#portfolio > .intro .container > .coding > div > h4 {
-  padding: 30px 0;
-  font-size: 32px;
-}
-@media screen and (max-width:640px) {
-  section#portfolio > .intro .container > .coding > div > h4 {
-    padding: 0 0 30px 0;
-    font-weight: 500;
-    font-size: 18px;
-  }
-}
-section#portfolio > .intro .container > .coding > div > p {
-  line-height: 30px;
-}
-@media screen and (max-width:640px) {
-  section#portfolio > .intro .container > .coding > div > p {
-    line-height: 1.6;
-  }
-}
-section#portfolio > .intro .container > .coding > div > p > span {
-  display: block;
-  margin-bottom: 30px;
-}
-@media screen and (max-width:640px) {
-  section#portfolio > .intro .container > .coding > div > p > span {
-    margin-bottom: 20px;
-  }
-}
-section#portfolio > .intro .container > .coding > div > .circle {
-  position: absolute;
-  left: 380px;
-  top: 40px;
-}
-@media screen and (max-width:640px) {
-  section#portfolio > .intro .container > .coding > div > .circle {
-    display: none;
-  }
-}
-section#portfolio > .intro .container > .coding > div > .circle > .ring {
-  position: absolute;
-  border: 2px solid #52B3D9;
-  border-radius: 200px;
-}
-section#portfolio > .intro .container > .coding > div > .circle > .ring.ring_1 {
-  left: 0;
-  top: 0px;
-  width: 45px;
-  height: 45px;
-  opacity: 0.7;
-}
-section#portfolio > .intro .container > .coding > div > .circle > .ring.ring_2 {
-  left: -6px;
-  top: -6px;
-  width: 57px;
-  height: 57px;
-  opacity: 0.6;
-}
-section#portfolio > .intro .container > .coding > div > .circle > .ring.ring_3 {
-  left: -12px;
-  top: -12px;
-  width: 69px;
-  height: 69px;
-  opacity: 0.5;
-}
-section#portfolio > .intro .container > .coding > div > .circle > .ring.ring_4 {
-  left: -18px;
-  top: -18px;
-  width: 81px;
-  height: 81px;
-  opacity: 0.4;
-}
-section#portfolio > .intro .container > .coding > div > .circle > .ring.ring_5 {
-  left: -24px;
-  top: -24px;
-  width: 93px;
-  height: 93px;
-  opacity: 0.3;
-}
-section#portfolio > .intro .container > .coding > div > .circle > .ring.ring_6 {
-  left: -30px;
-  top: -30px;
-  width: 105px;
-  height: 105px;
-  opacity: 0.2;
-}
-section#portfolio > .intro .container > .coding > div > .circle > .ring.ring_7 {
-  left: -36px;
-  top: -36px;
-  width: 117px;
-  height: 117px;
-  opacity: 0.1;
-}
 section#portfolio > .works {
   position: relative;
 }
 section#portfolio > .works > h3 {
   position: relative;
   width: 300px;
-  margin: 0 auto 56px;
+  margin: 100px auto 30px;
   padding-bottom: 8px;
   font-weight: 500;
   font-size: 32px;
@@ -2253,7 +1690,7 @@ section#contact > .apply > p {
     height: 150px;
     margin-bottom: 50px;
     padding: 0 20px;
-    font-weight: 400;
+    font-weight: 500;
     text-align: center;
     background-image: none;
     box-sizing: border-box;
