@@ -499,6 +499,57 @@ section#aboutme > .container > .biography > .detail > p {
 section#aboutme > .container > .biography > .detail > p > mark {
   background-color: #fcf8e3;
 }
+section#aboutme > .container > .biography > .detail > a {
+  display: block;
+  width: 260px;
+  height: 40px;
+  color: #fff;
+  line-height: 40px;
+  letter-spacing: 1px;
+  text-align: center;
+  background-color: #222;
+  transition: all 0.2s;
+}
+@media screen and (max-width:640px) {
+  section#aboutme > .container > .biography > .detail > a {
+    display: none;
+  }
+}
+section#aboutme > .container > .biography > .detail > a:hover {
+  background-color: #52B3D9;
+}
+section#aboutme > .container > .biography > .detail > .shadow {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  /* opacity: 0.75; */
+}
+section#aboutme > .container > .biography > .detail > .shadow > .lightbox {
+  display: block;
+  overflow-y: scroll;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 1200px;
+  height: 800px;
+  margin: -400px 0 0 -600px;
+}
+section#aboutme > .container > .biography > .detail > .shadow > .lightbox > img {
+  display: block;
+  width: 100%;
+}
+section#aboutme > .container > .biography > .detail > .shadow > .clse {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: 370px 0 0 540px;
+}
 section#aboutme > .container > .biography > .detail > .ican {
   display: flex;
   flex-flow: row wrap;
@@ -851,118 +902,11 @@ section#ability > .ability-container > .piechart > .item > .chart > .tit {
   font-size: 18px;
   line-height: 60px;
 }
-section#ability > .resume {
-  padding: 50px 0;
-  background-color: #fff;
-}
-@media screen and (max-width:640px) {
-  section#ability > .resume {
-    padding-bottom: 0;
-  }
-}
-section#ability > .resume > div {
-  padding: 0 30px;
-  display: flex;
-  justify-content: center;
-}
-@media screen and (max-width:640px) {
-  section#ability > .resume > div {
-    display: block;
-  }
-}
-section#ability > .resume > div > .frame {
-  display: block;
-  width: 520px;
-  height: 340px;
-  margin-right: 50px;
-  border: 1px solid #000;
-  overflow: hidden;
-}
-@media screen and (max-width:640px) {
-  section#ability > .resume > div > .frame {
-    width: 100%;
-    height: auto;
-    margin-right: 0;
-    margin-bottom: 10px;
-  }
-}
-section#ability > .resume > div > .frame > img {
-  display: block;
-  width: 100%;
-  box-shadow: 1px 1px 5px #ccc;
-}
-section#ability > .resume > div > .iam {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-between;
-}
-section#ability > .resume > div > .iam > p {
-  line-height: 26px;
-}
-section#ability > .resume > div > .iam > p > span {
-  display: block;
-}
-@media screen and (max-width:640px) {
-  section#ability > .resume > div > .iam > p > span {
-    display: inline;
-  }
-}
-section#ability > .resume > div > .iam > a {
-  display: block;
-  width: 260px;
-  height: 40px;
-  color: #fff;
-  line-height: 40px;
-  letter-spacing: 1px;
-  text-align: center;
-  background-color: #222;
-  transition: all 0.2s;
-}
-@media screen and (max-width:640px) {
-  section#ability > .resume > div > .iam > a {
-    display: none;
-  }
-}
-section#ability > .resume > div > .iam > a:hover {
-  background-color: #52B3D9;
-}
-section#ability > .resume > div > .iam > .shadow {
-  display: none;
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1000;
-  /* opacity: 0.75; */
-}
-section#ability > .resume > div > .iam > .shadow > .lightbox {
-  display: block;
-  overflow-y: scroll;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 1200px;
-  height: 800px;
-  margin: -400px 0 0 -600px;
-}
-section#ability > .resume > div > .iam > .shadow > .lightbox > img {
-  display: block;
-  width: 100%;
-}
-section#ability > .resume > div > .iam > .shadow > .clse {
-  display: block;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  margin: 370px 0 0 540px;
-}
 
 section#uxdesign {
   width: 100%;
   margin: 0 auto;
-  background: #222;
+  background: #fff;
 }
 @media screen and (max-width:640px) {
   section#uxdesign {
@@ -971,7 +915,7 @@ section#uxdesign {
   }
 }
 section#uxdesign > h2 {
-  color: #fff;
+  color: #2C3E50;
 }
 section#uxdesign > .slides {
   overflow: hidden;
@@ -1084,7 +1028,7 @@ section#uxdesign > .intro > h3 {
   margin-bottom: 56px;
   font-size: 32px;
   text-align: center;
-  color: #fff;
+  color: #2C3E50;
   font-weight: 500;
 }
 @media screen and (max-width:640px) {
@@ -1123,7 +1067,7 @@ section#uxdesign > .intro > p {
   width: 664px;
   margin: 0 auto 80px;
   line-height: 30px;
-  color: #fff;
+  color: #2C3E50;
 }
 @media screen and (max-width:640px) {
   section#uxdesign > .intro > p {
@@ -1155,7 +1099,7 @@ section#uxdesign > .intro .umbrella-uiux > h4 {
   text-align: right;
   margin-right: 20px;
   font-weight: 500;
-  color: #fff;
+  color: #2C3E50;
   font-size: 16px;
 }
 @media screen and (max-width:640px) {

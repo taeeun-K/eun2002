@@ -536,6 +536,63 @@ section#aboutme{
           }
         }//end of p
 
+        
+        > a {
+          display: block;
+          width: 260px;
+          height: 40px;
+          color: #fff;
+          line-height: 40px;
+          letter-spacing: 1px;
+          text-align: center;
+          background-color: #222;
+          transition: all 0.2s;
+
+          @media #{$mobile}{
+            display: none;
+          }
+
+          &:hover {
+            background-color: $pri-color-2;
+          }
+        }
+
+        > .shadow {
+          display: none;
+          position: fixed;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.5);
+          z-index: 1000;
+          /* opacity: 0.75; */
+
+          > .lightbox {
+            display: block;
+            overflow-y: scroll;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 1200px;
+            height: 800px;
+            margin: -400px 0 0 -600px;
+
+            > img {
+              display: block;
+              width: 100%;
+            }
+          }//end of .lightbox
+
+          > .clse {
+            display: block;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin: 370px 0 0 540px;
+          }
+        }//end of .shadow
+
         >.ican{
           display: flex;
           flex-flow: row wrap;
@@ -1035,133 +1092,133 @@ section#ability{
     }//end of piechart
   }//end of .container
 
-  >.resume{
-    padding: 50px 0;
-    background-color: #fff;
-    @media #{$mobile}{
-      padding-bottom: 0;
-    }
+  // >.resume{
+  //   padding: 50px 0;
+  //   background-color: #fff;
+  //   @media #{$mobile}{
+  //     padding-bottom: 0;
+  //   }
 
-    > div {
-      padding: 0 30px;
-      display: flex;
-      justify-content: center;
+  //   > div {
+  //     padding: 0 30px;
+  //     display: flex;
+  //     justify-content: center;
 
-      @media #{$mobile}{
-        display: block;
-      }
+  //     @media #{$mobile}{
+  //       display: block;
+  //     }
 
-      > .frame {
-        display: block;
-        width: 520px;
-        height: 340px;
-        margin-right: 50px;
-        border: 1px solid #000;
-        overflow: hidden;
+  //     > .frame {
+  //       display: block;
+  //       width: 520px;
+  //       height: 340px;
+  //       margin-right: 50px;
+  //       border: 1px solid #000;
+  //       overflow: hidden;
 
-        @media #{$mobile}{
-          width: 100%;
-          height: auto;
-          margin-right: 0;
-          margin-bottom: 10px;
-        }
+  //       @media #{$mobile}{
+  //         width: 100%;
+  //         height: auto;
+  //         margin-right: 0;
+  //         margin-bottom: 10px;
+  //       }
 
-        > img {
-          display: block;
-          width: 100%;
-          box-shadow: 1px 1px 5px #ccc;
-        }
-      }
+  //       > img {
+  //         display: block;
+  //         width: 100%;
+  //         box-shadow: 1px 1px 5px #ccc;
+  //       }
+  //     }
 
-      > .iam {
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: space-between;
+  //     > .iam {
+  //       display: flex;
+  //       flex-flow: column nowrap;
+  //       justify-content: space-between;
 
-        > p {
-          line-height: 26px;
+  //       > p {
+  //         line-height: 26px;
 
-          > span {
-            display: block;
+  //         > span {
+  //           display: block;
 
-            @media #{$mobile}{
-              display: inline;
-            }
-          }
-        }
+  //           @media #{$mobile}{
+  //             display: inline;
+  //           }
+  //         }
+  //       }
 
-        > a {
-          display: block;
-          width: 260px;
-          height: 40px;
-          color: #fff;
-          line-height: 40px;
-          letter-spacing: 1px;
-          text-align: center;
-          background-color: #222;
-          transition: all 0.2s;
+  //       > a {
+  //         display: block;
+  //         width: 260px;
+  //         height: 40px;
+  //         color: #fff;
+  //         line-height: 40px;
+  //         letter-spacing: 1px;
+  //         text-align: center;
+  //         background-color: #222;
+  //         transition: all 0.2s;
 
-          @media #{$mobile}{
-            display: none;
-          }
+  //         @media #{$mobile}{
+  //           display: none;
+  //         }
 
-          &:hover {
-            background-color: $pri-color-2;
-          }
-        }
+  //         &:hover {
+  //           background-color: $pri-color-2;
+  //         }
+  //       }
 
-        > .shadow {
-          display: none;
-          position: fixed;
-          left: 0;
-          top: 0;
-          width: 100%;
-          height: 100%;
-          background-color: rgba(0, 0, 0, 0.5);
-          z-index: 1000;
-          /* opacity: 0.75; */
+  //       > .shadow {
+  //         display: none;
+  //         position: fixed;
+  //         left: 0;
+  //         top: 0;
+  //         width: 100%;
+  //         height: 100%;
+  //         background-color: rgba(0, 0, 0, 0.5);
+  //         z-index: 1000;
+  //         /* opacity: 0.75; */
 
-          > .lightbox {
-            display: block;
-            overflow-y: scroll;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            width: 1200px;
-            height: 800px;
-            margin: -400px 0 0 -600px;
+  //         > .lightbox {
+  //           display: block;
+  //           overflow-y: scroll;
+  //           position: absolute;
+  //           left: 50%;
+  //           top: 50%;
+  //           width: 1200px;
+  //           height: 800px;
+  //           margin: -400px 0 0 -600px;
 
-            > img {
-              display: block;
-              width: 100%;
-            }
-          }//end of .lightbox
+  //           > img {
+  //             display: block;
+  //             width: 100%;
+  //           }
+  //         }//end of .lightbox
 
-          > .clse {
-            display: block;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            margin: 370px 0 0 540px;
-          }
-        }//end of .shadow
-      }//end of .iam
-    }//end of div
-  }//end of resume
+  //         > .clse {
+  //           display: block;
+  //           position: absolute;
+  //           left: 50%;
+  //           top: 50%;
+  //           margin: 370px 0 0 540px;
+  //         }
+  //       }//end of .shadow
+  //     }//end of .iam
+  //   }//end of div
+  // }//end of resume
 }//end of #ability
 
 
 section#uxdesign{
   width: 100%;
   margin: 0 auto;
-  background: #222;
+  background: #fff;
 
   @media #{$mobile}{
     width: 100%;
     margin: 0;
   }
 
-  > h2{color: #fff;}
+  > h2{color: #2C3E50;}
 
   > .slides {
     overflow: hidden;
@@ -1286,7 +1343,7 @@ section#uxdesign{
       margin-bottom: 56px;
       font-size: $subTitle;
       text-align: center;
-      color: #fff;
+      color: #2C3E50;
       font-weight: 500;
 
       @media #{$mobile}{
@@ -1329,7 +1386,7 @@ section#uxdesign{
       width: 664px;
       margin: 0 auto 80px;
       line-height: 30px;
-      color: #fff;
+      color: #2C3E50;
 
       @media #{$mobile}{
         width: 90%;
@@ -1361,7 +1418,7 @@ section#uxdesign{
         text-align: right;
         margin-right: 20px;
         font-weight: 500;
-        color: #fff;
+        color: #2C3E50;
         font-size: $txtMedium;
 
         @media #{$mobile}{

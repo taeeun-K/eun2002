@@ -99,14 +99,14 @@ $(function() {
 });
 
 
-//ability 영역
+
 $(function(){
 
     //라이트박스
-    const $btnIAM = $(".iam a");
-    const $shadow = $(".iam .shadow");
-    const $lightbox = $('.iam .lightbox');
-    const $btnClse = $(".iam .clse");
+    const $btnIAM = $(".detail a");
+    const $shadow = $(".detail  .shadow");
+    const $lightbox = $('.detail .lightbox');
+    const $btnClse = $(".detail .clse");
 
     $btnIAM.on('click', function(evt){
         evt.preventDefault();
@@ -146,7 +146,7 @@ $(function(){
 
 
 
-
+    //ability 영역
 	//inview 이벤트는 화면이 요소가 출현했을 때 작동
 	$("#ability").on("inview", function(evt, visible){
 		if(visible==true){
