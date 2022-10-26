@@ -2584,6 +2584,12 @@ footer{
 
         &:hover{text-decoration: underline;}
       }
+
+      >time{
+        @media #{$mobile}{
+          display: none;
+        }
+      }
     }//end of p
   }//end of working
 

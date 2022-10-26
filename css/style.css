@@ -1685,6 +1685,11 @@ footer > .working > p > a {
 footer > .working > p > a:hover {
   text-decoration: underline;
 }
+@media screen and (max-width:640px) {
+  footer > .working > p > time {
+    display: none;
+  }
+}
 footer > .info {
   background-color: #222;
 }
