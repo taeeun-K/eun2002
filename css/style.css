@@ -1713,9 +1713,21 @@ footer > .info > .container > h2 > a,
 footer > .info > .container > p > a {
   color: #aaa;
 }
+@media screen and (max-width:640px) {
+  footer > .info > .container > h2 > a,
+footer > .info > .container > p > a {
+    display: block;
+  }
+}
 footer > .info > .container > h2 > .bar,
 footer > .info > .container > p > .bar {
   margin: 0 10px;
+}
+@media screen and (max-width:640px) {
+  footer > .info > .container > h2 > .bar,
+footer > .info > .container > p > .bar {
+    display: none;
+  }
 }
 footer > .info > .container > h2:after {
   display: block;

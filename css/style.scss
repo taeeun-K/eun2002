@@ -2612,10 +2612,18 @@ footer{
 
         >a{
           color: #aaa;
+
+          @media #{$mobile}{
+            display: block;
+          }
         }
 
         >.bar{
           margin: 0 10px;
+
+          @media #{$mobile}{
+            display: none;
+          }
         }
       }//end of h2,p
 
