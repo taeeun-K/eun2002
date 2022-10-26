@@ -924,6 +924,7 @@ section#skill{
           background-size: 100px;
           background-position: 0 center;
           margin-bottom: 10px;
+          padding-left: 120px;
 
 		      &:first-child{margin-bottom: 40px;}
         }
@@ -953,7 +954,7 @@ section#skill{
       background-position: 180px 0;
 
       @media #{$mobile}{
-        padding-left: 180px;
+        padding-left: 120px;
         background-position: 0 center;
       }
     }
@@ -968,7 +969,7 @@ section#skill{
       background-position: 180px 0;
       
       @media #{$mobile}{
-        padding-left: 180px;
+        padding-left: 120px;
         background-position: 0 center;
       }
     }

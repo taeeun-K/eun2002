@@ -759,6 +759,7 @@ section#skill > article > ol > li {
     background-size: 100px;
     background-position: 0 center;
     margin-bottom: 10px;
+    padding-left: 120px;
   }
   section#skill > article > ol > li:first-child {
     margin-bottom: 40px;
@@ -785,7 +786,7 @@ section#skill > article.skill-1 li:first-child {
 }
 @media screen and (max-width:640px) {
   section#skill > article.skill-1 li:first-child {
-    padding-left: 180px;
+    padding-left: 120px;
     background-position: 0 center;
   }
 }
@@ -799,7 +800,7 @@ section#skill > article.skill-2 li:first-child {
 }
 @media screen and (max-width:640px) {
   section#skill > article.skill-2 li:first-child {
-    padding-left: 180px;
+    padding-left: 120px;
     background-position: 0 center;
   }
 }
