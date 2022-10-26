@@ -474,9 +474,9 @@ section#aboutme{
             height: auto;
 
             @media #{$mobile}{
-              width: 110%;
+              width: 100%;
               height: auto;
-              margin: -15px 0 0 -30px;
+              margin: 0;
             }
           }
         }//end of .myphoto
@@ -491,6 +491,7 @@ section#aboutme{
             border-bottom: 1px solid #eee;
 
             @media #{$mobile}{
+              font-size: 12px;
               height: 30px;
               line-height: 30px;
             }
