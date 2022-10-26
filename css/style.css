@@ -1123,6 +1123,10 @@ section#uxdesign > .intro .umbrella-uiux > .frame > img {
   width: 100%;
 }
 
+section#portfolio {
+  width: 100%;
+  border-top: 1px solid #cdcdcd;
+}
 section#portfolio > article {
   width: 1200px;
   margin: 0 auto;
