@@ -441,12 +441,12 @@ section#aboutme > .container > .profile > div > .myphoto > img {
   z-index: -1;
   margin: -15px 0 0 0;
   width: 360px;
-  height: 500px;
+  height: auto;
 }
 @media screen and (max-width:640px) {
   section#aboutme > .container > .profile > div > .myphoto > img {
     width: 110%;
-    height: 860px;
+    height: auto;
     margin: -15px 0 0 -30px;
   }
 }
@@ -694,6 +694,7 @@ section#aboutme > .talk > ul > li > strong {
 section#aboutme > .talk > ul > li > p {
   line-height: 1.8;
   text-align: center;
+  margin-bottom: 10px;
 }
 
 section#skill > article.skill-1 {

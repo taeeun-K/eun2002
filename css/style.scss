@@ -471,11 +471,11 @@ section#aboutme{
             z-index: -1;//-1값 설정시 가장 아래 바닥으로 깔린다.
             margin: -15px 0 0 0;
             width: 360px;
-            height: 500px;
+            height: auto;
 
             @media #{$mobile}{
               width: 110%;
-              height: 860px;
+              height: auto;
               margin: -15px 0 0 -30px;
             }
           }
@@ -784,7 +784,6 @@ section#aboutme{
 
           /*자동줄바꿈 안됨*/
           white-space: nowrap;
-
           background-color: $pri-color-2;
 
           @media #{$mobile}{
@@ -853,6 +852,7 @@ section#aboutme{
         > p {
           line-height: 1.8;
           text-align: center;
+          margin-bottom: 10px;
         }
       }//end of li
     }//end of ul
