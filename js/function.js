@@ -45,7 +45,7 @@ $(function() {
 		} else {
 			//모바일
 			$h1.css({
-				top: $intro.offset().top - 100,
+				top: $intro.offset().top - 70,
 				marginLeft: -$h1.width() / 2
 			});
 
@@ -78,7 +78,7 @@ $(function() {
 			});
 		}
 
-        //네이버라인 비주얼 효과       
+        //네이버라인스타일 비주얼 효과       
         if(window.innerWidth>640){//PC모드
             if(scrollTop>window.innerHeight-400){
                 $home.css({
@@ -348,47 +348,6 @@ $(function(){
 
 		fadeFn();
 	});
-
-
-
-    //작업과정
-    const $btnProc = $("#portfolio>.slides .proc");
-    const $shadow = $("#portfolio>.slides .shadow");
-    const $lightbox = $('#portfolio>.slides .lightbox');
-    const $btnClse = $("#portfolio>.slides .clse");
-
-    $btnProc.on('click', function(evt){
-        evt.preventDefault();
-
-        $shadow.hide().eq(nowIdx).show();//그림자 노출
-    })
-
-    //닫기
-    $btnClse.on('click', function(){
-        $shadow.hide();
-    });
-
-
-    //그림자영역을 클릭하면 닫힘
-    $shadow.on('click', function(){
-        $shadow.hide();
-    });
-
-
-    //이벤트전파 안되게 설정
-    $lightbox.on('click', function(evt){
-        evt.stopPropagation();
-    });
-
-
-    //ESC키를 이용한 닫기설정
-    $(document).on('keyup', function(evt){
-        console.log('현재 눌린 키의 번호는 '+ evt.which);
-        if(evt.which=='27'){
-            $shadow.hide();
-        }
-    });
-
 
 
 
