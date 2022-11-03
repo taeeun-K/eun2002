@@ -1,9 +1,9 @@
-//로딩중(애니큐빅)
+//로딩중
 $(function() {
 	const $loading = $('.loading');
 	$loading.children('p').fadeOut();
-	$loading.delay(350).fadeOut(800,function(){
-		$(this).remove();
+	$loading.delay(300).fadeOut(1000,function(){
+		$(this).fadeOut();
 	});
 	
 	
@@ -29,7 +29,7 @@ $(function() {
 		$home.height(window.innerHeight);
 
 		$h1.css({
-			top: $intro.offset().top - 72,
+			top: $intro.offset().top - 90,
 			marginLeft: -$h1.width() / 2
 		});
 
@@ -37,7 +37,7 @@ $(function() {
 		if(window.innerWidth>640){//PC모드
 			//PC모드
 			$h1.css({
-				top: $intro.offset().top - 72,
+				top: $intro.offset().top - 90,
 				marginLeft: -$h1.width() / 2
 			});
 
