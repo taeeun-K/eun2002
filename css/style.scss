@@ -1172,6 +1172,40 @@ section#portfolio{
                   margin: 0 auto;
                   background-size: contain;                
                 }
+
+                &.mobileFrame{
+                  position: relative;
+                  background-color: #fff;
+                  background-image: url(./../images/portfolio/mobile.png);
+                  background-size: 200px 380px;
+                  background-position: center;
+
+
+                  @media #{$mobile}{
+                    width: 150px;
+                    height: 220px;
+                    margin: 0 auto;
+                    background-size: contain;    
+                  }
+
+
+                  >img{
+                    position: absolute;
+                    left: 50%;
+                    top: 5px;
+                    margin-left: -93px;
+                    width: 186px;
+                    height: 364px;
+                    border-radius: 13px;
+
+                    @media #{$mobile}{
+                      width: 104px;
+                      height: 208px;
+                      margin-left: -52px;
+                      border-radius: 7px; 
+                    }
+                  }
+                }
                 
                 >img{
                   position: absolute;

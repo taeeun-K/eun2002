@@ -1074,6 +1074,38 @@ section#portfolio > .slides > .slides-container > figure > .frame {
     background-size: contain;
   }
 }
+section#portfolio > .slides > .slides-container > figure > .frame.mobileFrame {
+  position: relative;
+  background-color: #fff;
+  background-image: url(./../images/portfolio/mobile.png);
+  background-size: 200px 380px;
+  background-position: center;
+}
+@media screen and (max-width:640px) {
+  section#portfolio > .slides > .slides-container > figure > .frame.mobileFrame {
+    width: 150px;
+    height: 220px;
+    margin: 0 auto;
+    background-size: contain;
+  }
+}
+section#portfolio > .slides > .slides-container > figure > .frame.mobileFrame > img {
+  position: absolute;
+  left: 50%;
+  top: 5px;
+  margin-left: -93px;
+  width: 186px;
+  height: 364px;
+  border-radius: 13px;
+}
+@media screen and (max-width:640px) {
+  section#portfolio > .slides > .slides-container > figure > .frame.mobileFrame > img {
+    width: 104px;
+    height: 208px;
+    margin-left: -52px;
+    border-radius: 7px;
+  }
+}
 section#portfolio > .slides > .slides-container > figure > .frame > img {
   position: absolute;
   left: 76px;
