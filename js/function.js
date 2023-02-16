@@ -1,58 +1,10 @@
-//로딩중
+
+//네비게이션
 $(function() {
-	const $loading = $('.loading');
-	$loading.children('p').fadeOut();
-	$loading.delay(300).fadeOut(1000,function(){
-		$(this).fadeOut();
-	});
-	
-	
-	$(window).on("load", function(){
-		new WOW().init();//WOW 플러그인 연동
-	});		
-});
-
-
-//인트로, 네비게이션
-$(function() {
-	const $h1 = $('h1');
-	const $home = $('#home');
-    const $intro = $home.children('.intro');
-
 	const $header = $('header');
 	const $nav = $header.find('nav');
 	const $btnGnb = $header.find('.btn-gnb');
 
-	//처음 로딩과 브라우저창 크기를 줄였을때 설정
-	$(window).on('load resize', function() {
-		//$home.height($(window).height());
-		$home.height(window.innerHeight);
-
-		$h1.css({
-			top: $intro.offset().top - 90,
-			marginLeft: -$h1.width() / 2
-		});
-
-		//가로폭 크기 기준 - window객체의 경우 .width()가 정확히 측정하지 못하므로(17px 모자름) window.innerWidth 사용권장
-		if(window.innerWidth>640){//PC모드
-			//PC모드
-			$h1.css({
-				top: $intro.offset().top - 90,
-				marginLeft: -$h1.width() / 2
-			});
-
-			$nav.show();
-		} else {
-			//모바일
-			$h1.css({
-				top: $intro.offset().top - 70,
-				marginLeft: -$h1.width() / 2
-			});
-
-			$btnGnb.removeClass('clse');
-			$nav.hide();
-		}
-	});
 
 	//햄버거버튼
 	$btnGnb.on('click', function() {
@@ -64,7 +16,7 @@ $(function() {
 		//현재 스크롤바의 top 값 추출
 		let scrollTop = $(this).scrollTop();
 
-		if (scrollTop > $(this).height()) {
+		if (scrollTop > 1) {
 			$header.addClass('fixed');
 			//const headerH = $header.outerHeight()
 			$('#aboutme').css({
@@ -77,25 +29,17 @@ $(function() {
 				marginTop: 0
 			});
 		}
-
-        //네이버라인스타일 비주얼 효과       
-        if(window.innerWidth>640){//PC모드
-            if(scrollTop>window.innerHeight-400){
-                $home.css({
-                    //top:66,
-                    transform:'scale(0.9)'
-                });
-            }else{
-                $home.css({
-                    top:0,
-                    transform:'initial'
-                });
-            }
-        }          
 	}); //end of scroll
 
 
+    // 네비활성화
+    $nav.on('click', function(evt){
+        nowIdx = $indicator.index(this);
 
+        indicatorFn($nav);
+
+        evt.preventDefault();
+    });
 });
 
 
@@ -210,6 +154,11 @@ $(function(){
 });
 
 
+//활성화 표시
+function indicatorFn($indicator){
+    $indicator.eq(nowIdx).parent().addClass('on').siblings().removeClass('on');
+}
+
 //#uxdesign 영역의 slides
 $(function(){
 
@@ -230,17 +179,13 @@ $(function(){
         });
     }
 
-    //활성화 표시
-    function indicatorFn(){
-        $indicator.eq(nowIdx).parent().addClass('on').siblings().removeClass('on');
-    }
 
 
     $indicator.on('click', function(evt){
         nowIdx = $indicator.index(this);
 
         moveFn();
-        indicatorFn();
+        indicatorFn($indicator);
 
         evt.preventDefault();
     });
@@ -305,7 +250,7 @@ $(function(){
 
     function fadeFn(){
         $slides.eq(oldIdx).stop().fadeOut(200);//이전 슬라이드 사라짐 처리
-        $slides.eq(nowIdx).stop().fadeIn(200).css({display:'flex'});//이번에 나타날 슬라이드 처리
+        $slides.eq(nowIdx).stop().fadeIn(200).css({display:'block'});//이번에 나타날 슬라이드 처리
         
         //활성화표시
         $indicator.eq(nowIdx).parent().addClass('on').siblings().removeClass('on');

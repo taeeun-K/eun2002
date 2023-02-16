@@ -35,42 +35,18 @@
 
 <body>
   <div id="wrap">
-
-    <div class="loading">로딩중...</div>
-
-    <h1>Kim Tae Eun</h1>
-    <section id="home">
-      <div class="intro">
-        <h2>CREATIVE <span>PUBLISHER</span></h2>
-        <p>
-          큰 나무로 성장할 준비가 되어있는 <span>웹퍼블리셔 김태은 입니다.</span> <br />
-          꾸준히 공부하는 자세로 <span>탄탄한 시멘틱 웹사이트를 구축하기위해</span> <br />
-          항상 노력하겠습니다.
-        </p>
-      </div>
-
-      <div class="scrollBox">
-        <p class="scrollTxt">Scroll↓</p>
-        <div class="mouse">
-            <p class="wheel">스크롤바를 내리면 작품을 감상할 수 있습니다.</p>
-        </div>        
-      </div>
-    </section>
-
-    <hr />
-
     <header>
       <div class="container">
-        <h2><a href="#" class="logo">PORTFOLIO</a></h2>
+        <h2><a href="#" class="logo">김태은 PORTFOLIO</a></h2>
 
         <button type="button" class="btn-gnb">메뉴보기</button>
 
         <nav>
           <ul class="gnb">
             <li class="on"><a href="#">ABOUT-ME</a></li>
+            <li><a href="#">PORTFOLIO</a></li>
             <li><a href="#">SKILL</a></li>
             <li><a href="#">ABILITY</a></li>
-            <li><a href="#">PORTFOLIO</a></li>
             <li><a href="#">CONTACT</a></li>
           </ul>
         </nav>
@@ -91,10 +67,10 @@
 
             <ol>
               <li><strong>Name :</strong> 김태은</li>
-              <li><strong>Birth :</strong> 1993. 09. 10</li>
-              <li><strong>Address :</strong> 서울시 강서구 마곡동</li>
+              <li><strong>Age :</strong> 30</li>
               <li><strong>Phone :</strong> 010-4517-3749</li>
               <li><strong>Email :</strong> xodms12393@gmail.com</li>
+              <li><strong>Address :</strong> 서울시 강서구 마곡동</li>
             </ol>
           </div>
         </article>
@@ -151,45 +127,142 @@
 
         </article>
       </div>
+    </section>
 
-      <hr />
+    <hr />
 
-      <hr />
 
-      <article class="talk">
-          <h3 class="wow fadeInUp">나에대한 주변인의 평가는 ?</h3>
-          <ul>
-              <li>
-                  <h4>기락</h4>
-                  <strong>이야기를 잘들어주는 따뜻한사람</strong>
-                  <p>
-                    하는일에 집중력이 좋고 열심히 하며 일의 마무리를 지을줄 아는 친구입니다. <br /> 흔들림없이 자기자리를 지켜주고 의지가 되어 줍니다.
-                  </p>
-              </li>
-              <li>
-                  <h4>지이</h4>
-                  <strong>포기하지않고 성취해내는 사람</strong>
-                  <p>
-                    어렵다고 느껴도 포기라는 생각을 하지않고 부딪치며 <br /> 문제의 해결방법을 먼저 생각하고 연구끝에 결국 해내는 강인한 친구입니다.
-                  </p>
-              </li>
-              <li>
-                  <h4>가영</h4>
-                  <strong>끈기가 매우 높은 친구</strong>
-                  <p>
-                    처음 접하는 상황에도 끝까지 놓지않고 내것으로 만들어 항상 공부하고 열심히 노력하는 친구이며, <br />배움을 두려워 하지 않고 무슨일이든 절대 포기하지않는 친구입니다. 
-                  </p>
-              </li>
+    <section id="portfolio">  
+      <h2 class="wow fadeInUp">PORTFOLIO</h2>
+
+      <article class="slides">
+          <ul class="slides-pagination">
+            <li class="on"><a href="#">양천구청</a></li>
+            <li><a href="#">스타일난다</a></li>
+            <li><a href="#">비짓제주</a></li>
+            <li><a href="#">컴포즈커피</a></li>
+            <li><a href="#">에버랜드</a></li>
+            <li><a href="#">제주도 추천여행</a></li>
           </ul>
-      </article>
+          
+          <div class="slides-container">
+            
+            <figure>
+              <div class="frame">
+                <a href="http://ke33333.dothome.co.kr/yangcheon">
+                  <img src="./images/portfolio/pofol-04.png" alt="양천구청">
+                </a>
+              </div>
+              <figcaption>
+                  <h3>양천구청 (메인페이지)</h3>
+                  <p class="desc">
+                    플러그인의 사용없이 작업하기위해 슬라이드의 이전/다음, 재생/정지, 자동재생, 인디케이터를 자바스크립트로 직접 작업하였습니다.                        
+                  </p>
+                  <p class="tools"><span>작업프로그램</span> : Visual Studio Code, SCSS, JS</p>
+                  <p class="etc"><span>작업기여도</span> : 100% 개인 작업</p>
+              </figcaption>
+            </figure>
 
+            <figure>
+              <div class="frame">
+                <a href="http://ke33333.dothome.co.kr/stylenanda">
+                  <img src="./images/portfolio/pofol-05.png" alt="스타일난다">
+                </a>
+              </div>
+                <figcaption>
+                    <h3>스타일난다 (메인페이지)</h3>
+                    <p class="desc">
+                      슬라이드의 레이아웃이 틀어지지 않도록 작업하였으며, <br />
+                      간소화를 위해 반응형에서는 슬라이드가 노출되지 않도록 작업하였습니다.                    
+                    </p>
+                    <p class="tools"><span>작업프로그램</span> : Visual Studio Code, SCSS, JS</p>
+                    <p class="etc"><span>작업기여도</span> : 100% 개인 작업</p>
+                </figcaption>
+            </figure>              
+
+            <figure>
+              <div class="frame">
+                <a href="http://ke33333.dothome.co.kr/visitjeju">
+                  <img src="./images/portfolio/pofol-03.png" alt="비짓제주">
+                </a>
+              </div>
+              <figcaption>
+                  <h3>비짓제주 (메인페이지)</h3>
+                  <p class="desc">
+                    제주의 대표컬러를 사용하여 이미지를 강조하였으며,<br />
+                    사이드메뉴를 고정시켜 가독성이 좋아지도록 작업하였습니다.                         
+                  </p>
+                  <p class="tools"><span>작업프로그램</span> : Visual Studio Code, SCSS, JS</p>
+                  <p class="etc"><span>작업기여도</span> : 100% 개인 작업</p>
+
+              </figcaption>
+            </figure>
+
+            <figure>
+              <div class="frame">
+                <a href="http://ke333333.dothome.co.kr/compose">
+                  <img src="./images/portfolio/pofol-02.png" alt="컴포즈커피">
+                </a>
+              </div>
+              <figcaption>
+                  <h3>컴포즈커피 (메인페이지)</h3>
+                  <p class="desc">
+                      기존 웹사이트의 개선사항을 찾아 메인페이지를 작업하였습니다. <br />
+                      컴포즈커피의 메인컬러로 브랜드 이미지를 강조하였으며,<br />
+                      간결한 레이아웃으로 컨텐츠를 보기 쉽게 배치하였습니다.
+                  </p>
+                  <p class="tools"><span>작업프로그램</span> : Visual Studio Code, SCSS, JS</p>
+                  <p class="etc"><span>작업기여도</span> : 100% 개인 작업</p>
+              </figcaption>
+            </figure>
+
+            <figure>
+              <div class="frame">
+                <a href="http://ke33333.dothome.co.kr">
+                  <img src="./images/portfolio/pofol-01.png" alt="에버랜드">
+                </a>
+              </div>
+              <figcaption>
+                  <h3>에버랜드 (메인페이지)</h3>
+                  <p class="desc">
+                      기존 웹사이트의 개선사항을 찾아 메인페이지를 작업하였습니다. <br />
+                      사이드메뉴를 이용한 페이지 이동 전환이 매끄럽게 구동되도록 하고  <br />
+                      간결한 레이아웃으로 전달하고자 하는 내용을 보기 쉽게 배치하였습니다.                                
+                  </p>
+                  <p class="tools"><span>작업프로그램</span> : Visual Studio Code, SCSS, JS</p>
+                  <p class="etc"><span>작업기여도</span> : 100% 개인 작업</p>
+              </figcaption>
+            </figure>    
+
+            <figure>
+              <div class="frame">
+                <a href="http://ke333333.dothome.co.kr">
+                  <img src="./images/portfolio/pofol-06.png" alt="제주도 여행">
+                </a>
+              </div>
+              <figcaption>
+                  <h3>제주도 추천여행</h3>
+                  <p class="desc">
+                      제주도의 특징과 대표 관광명소를 소개한 원페이지 사이트로,<br />
+                      제주의 대표과일인 감귤컬러를 담은 로고마크를 사용하였으며<br /> 
+                      전체적으로 하늘과 바다를 닮은 컬러를 적용하여 제주도의 느낌을 주었습니다.
+                  </p>
+                  <p class="tools"><span>작업프로그램</span> : Visual Studio Code, SCSS, JS</p>
+                  <p class="etc"><span>작업기여도</span> : 100% 개인 작업</p>
+              </figcaption>
+            </figure>              
+          </div>
+
+          <a href="#" class="prev">이전</a>
+          <a href="#" class="next">다음</a>
+
+      </article>
     </section>
 
     <hr />
 
     <section id="skill">
       <h2 class="wow fadeInUp">SKILL</h2>
-
 
       <article class="skill-1">
         <h3>탁월한 UX분석능력과 <span>Emmet/Zencoding 활용</span></h3>
@@ -339,256 +412,7 @@
 
     <hr />
 
-    <section id="portfolio">  
-      <h2 class="wow fadeInUp">PORTFOLIO</h2>
 
-      <article class="slides">
-          <ul class="slides-pagination">
-            <li class="on"><a href="#">GC지놈</a></li>
-            <li><a href="#">양천구청</a></li>
-            <li><a href="#">스타일난다</a></li>
-            <li><a href="#">컴포즈커피</a></li>
-            <li><a href="#">비짓제주</a></li>
-            <li><a href="#">에버랜드</a></li>
-            <li><a href="#">제주도 추천여행</a></li>
-          </ul>
-          
-          <div class="slides-container">
-            <figure>
-              <figcaption>
-                  <h3>GC지놈 (모바일페이지)</h3>
-                  <p class="tip">GC genome Project</p>
-                  <p class="desc">
-                    반응형이 아닌 적응형 방식으로 작업하였습니다. <br />
-                    원페이지와 슬라이드 모두 에러없이 부드럽게 구동되도록 작업하였습니다.                        
-                  </p>
-                  <p class="tools"><span>작업프로그램</span> : Visual Studio Code, SCSS, JS</p>
-                  <p class="etc"><span>작업기여도</span> : 100% 개인 작업</p>
-                  <p class="btn">
-                      <a href="http://ke333333.dothome.co.kr/gcgenome/" target="_blank">사이트보기</a>
-                  </p>
-
-              </figcaption>
-              <div class="frame mobileFrame">
-                  <img src="./images/portfolio/pofol-07.png" alt="GC지놈">
-              </div>
-            </figure>
-
-            <figure>
-                <figcaption>
-                    <h3>양천구청 (메인페이지)</h3>
-                    <p class="tip">VISIT JEJU Project</p>
-                    <p class="desc">
-                      기존 웹사이트의 개선사항을 찾아 메인페이지를 작업하였습니다. <br />
-                      라이브러리 없이 작업하기위해서 슬라이드를 직접 자바스크립트로 <br />
-                      이전/다음, 재생/정지, 자동재생, 인디케이터로 작업하였습니다.                        
-                    </p>
-                    <p class="tools"><span>작업프로그램</span> : Visual Studio Code, SCSS, JS</p>
-                    <p class="etc"><span>작업기여도</span> : 100% 개인 작업</p>
-                    <p class="btn">
-                        <a href="http://ke33333.dothome.co.kr/yangcheon" target="_blank">사이트보기</a>
-                    </p>
-
-                </figcaption>
-                <div class="frame">
-                    <img src="./images/portfolio/pofol-04.png" alt="양천구청">
-                </div>
-            </figure>
-
-            <figure>
-                <figcaption>
-                    <h3>스타일난다 (메인페이지)</h3>
-                    <p class="tip">VISIT JEJU Project</p>
-                    <p class="desc">
-                      기존 웹사이트의 개선사항을 찾아 메인페이지를 작업하였습니다. <br />
-                      슬라이드의 레이아웃이 틀어지지 않도록 작업하였으며, 
-                      간소화를 위해 반응형에서는 슬라이드가 노출되지 않도록 작업하였습니다.                    
-                    </p>
-                    <p class="tools"><span>작업프로그램</span> : Visual Studio Code, SCSS, JS</p>
-                    <p class="etc"><span>작업기여도</span> : 100% 개인 작업</p>
-                    <p class="btn">
-                        <a href="http://ke33333.dothome.co.kr/stylenanda" target="_blank">사이트보기</a>
-                    </p>
-
-                </figcaption>
-                <div class="frame">
-                    <img src="./images/portfolio/pofol-05.png" alt="스타일난다">
-                </div>
-            </figure>              
-
-            <figure>
-                <figcaption>
-                    <h3>비짓제주 (메인페이지)</h3>
-                    <p class="tip">VISIT JEJU Project</p>
-                    <p class="desc">
-                      기존 웹사이트의 개선사항을 찾아 메인페이지를 작업하였습니다. <br />
-                      제주의 대표컬러를 사용하여 이미지를 강조하였으며,<br />
-                      사이드메뉴를 고정시켜 가독성이 좋아지도록 작업하였습니다.                         
-                    </p>
-                    <p class="tools"><span>작업프로그램</span> : Visual Studio Code, SCSS, JS</p>
-                    <p class="etc"><span>작업기여도</span> : 100% 개인 작업</p>
-                    <p class="btn">
-                        <a href="http://ke33333.dothome.co.kr/visitjeju" target="_blank">사이트보기</a>
-                    </p>
-
-                </figcaption>
-                <div class="frame">
-                    <img src="./images/portfolio/pofol-03.png" alt="비짓제주">
-                </div>
-            </figure>
-
-            <figure>
-                <figcaption>
-                    <h3>컴포즈커피 (메인페이지)</h3>
-                    <p class="tip">COMPOSE COFFEE Project</p>
-                    <p class="desc">
-                        기존 웹사이트의 개선사항을 찾아 메인페이지를 작업하였습니다. <br />
-                        컴포즈커피의 메인컬러로 브랜드 이미지를 강조하였으며,<br />
-                        간결한 레이아웃으로 컨텐츠를 보기 쉽게 배치하였습니다.
-                    </p>
-                    <p class="tools"><span>작업프로그램</span> : Visual Studio Code, SCSS, JS</p>
-                    <p class="etc"><span>작업기여도</span> : 100% 개인 작업</p>
-                    <p class="btn">
-                        <a href="http://ke333333.dothome.co.kr/compose" target="_blank">사이트보기</a>
-                    </p>
-
-                </figcaption>
-                <div class="frame">
-                    <img src="./images/portfolio/pofol-02.png" alt="컴포즈커피">
-                </div>
-            </figure>
-
-            <figure>
-                <figcaption>
-                    <h3>에버랜드 (메인페이지)</h3>
-                    <p class="tip">EVERLAND Project</p>
-                    <p class="desc">
-                        기존 웹사이트의 개선사항을 찾아 메인페이지를 작업하였습니다. <br />
-                        사이드메뉴를 이용한 페이지 이동 전환이 매끄럽게 구동되도록 하고  <br />
-                        간결한 레이아웃으로 전달하고자 하는 내용을 보기 쉽게 배치하였습니다.                                
-                    </p>
-                    <p class="tools"><span>작업프로그램</span> : Visual Studio Code, SCSS, JS</p>
-                    <p class="etc"><span>작업기여도</span> : 100% 개인 작업</p>
-                    <p class="btn">
-                        <a href="http://ke33333.dothome.co.kr" target="_blank">사이트보기</a>
-                    </p>
-                </figcaption>
-                <div class="frame">
-                    <img src="./images/portfolio/pofol-01.png" alt="에버랜드">
-                </div>
-            </figure>    
-
-            <figure>
-              <figcaption>
-                  <h3>제주도 추천여행</h3>
-                  <p class="tip">JEJU TRIP Site Design</p>
-                  <p class="desc">
-                      제주도의 특징과 대표 관광명소를 소개한 원페이지 사이트로,<br />
-                      제주의 대표과일인 감귤컬러를 담은 로고마크를 사용하였으며<br /> 
-                      전체적으로 하늘과 바다를 닮은 컬러를 적용하여 제주도의 느낌을 주었습니다.
-                  </p>
-                  <p class="tools"><span>작업프로그램</span> : Visual Studio Code, SCSS, JS</p>
-                  <p class="etc"><span>작업기여도</span> : 100% 개인 작업</p>
-                  <p class="btn">
-                      <a href="http://ke333333.dothome.co.kr" target="_blank">사이트보기</a>
-                  </p>
-              </figcaption>
-              <div class="frame">
-                  <img src="./images/portfolio/pofol-06.png" alt="제주도 여행">
-              </div>
-          </figure>              
-          </div>
-
-          <a href="#" class="prev">이전</a>
-          <a href="#" class="next">다음</a>
-
-      </article>
-
-      <hr />
-
-      <article class="works">
-          <h3 class="wow fadeInUp">구현 슬라이드</h3>
-
-          <ul class="work-list">
-              <li>
-                  <h4>좌우이동 슬라이드</h4>
-                  <p>
-                      슬라이드 구현에 적합한 태그와 flxe를 사용하여 UI를 구현하였습니다. <br />
-                      또한 자바스크립트로 position:left값을 변화시켜 구동되도록 하였습니다.
-                      
-                      <span class="tip">플러그인 없이 직접 구현하였습니다.</span>
-                  </p>
-                  <a href="http://ke33333.dothome.co.kr/prevnextslide" target="_blank" class="btnShow">슬라이드 보기</a>
-                  <p class="frame topFrame">
-                      <a href="http://ke33333.dothome.co.kr/prevnextslide" target="_blank">
-                          <img src="./images/portfolio/slide-01-thmb.png" alt="#">
-                      </a>
-                  </p>
-              
-
-              </li>
-              <li>
-                  <h4>무한 슬라이드</h4>
-                  <p>
-                      이전·다음 기능을 가진 업그레이드 된 슬라이드로 편의성이 향상되었습니다. <br />제이쿼리의 fadeIn(), fadeOut() API를 이용하여 구현하였습니다.
-                      
-                      <span class="tip">플러그인 없이 직접 구현하였습니다.</span>
-                  </p>
-                  <a href="http://ke33333.dothome.co.kr/infiniteslide" target="_blank" class="btnShow">슬라이드 보기</a>
-                  <p class="frame topFrame">
-                      <a href="http://ke33333.dothome.co.kr/infiniteslide" target="_blank">
-                          <img src="./images/portfolio/slide-02-thmb.png" alt="#">
-                      </a>
-                  </p>
-
-              </li>
-              <li>
-                  <h4>자동실행 슬라이드</h4>
-                  <p>
-                      시작, 정지기능이 장착된 슬라이드로서 일관성있게 한쪽 방향으로 슬라이드가 노출되는 기능을 append() API와 콜백함수의 개념을 접목하여 구현하였습니다.
-                      
-                      <span class="tip">플러그인 없이 직접 구현하였습니다.</span>
-                  </p>
-                  <a href="http://ke33333.dothome.co.kr/autoslide" target="_blank" class="btnShow">슬라이드 보기</a>
-                  <p class="frame topFrame">
-                      <a href="http://ke33333.dothome.co.kr/autoslide" target="_blank">
-                          <img src="./images/portfolio/autoplay.png" alt="#">
-                      </a>
-                  </p>
-
-              </li>
-          </ul>
-
-
-          <h3 class="wow fadeInUp">코딩 프로젝트</h3>          
-          <ul class="work-list">
-              <li>
-                  <p class="frame">
-                      <a href="http://ke33333.dothome.co.kr/game" target="_blank">
-                          <img src="./images/portfolio/game-01.png" alt="#">
-                      </a>
-                  </p>
-              </li>
-              <li>
-                  <p class="frame">
-                      <a href="http://ke33333.dothome.co.kr/game" target="_blank">
-                          <img src="./images/portfolio/game-01-02.png" alt="#">
-                      </a>
-                  </p>
-
-              </li>
-              <li>
-                  <p class="frame">
-                      <a href="http://ke33333.dothome.co.kr/multiplayer" target="_blank">
-                          <img src="./images/portfolio/player.png" alt="#">
-                      </a>
-                  </p>
-
-              </li>
-          </ul>
-
-      </article>
-    </section>
 
     <hr />
 
