@@ -246,7 +246,8 @@ section#aboutme{
         width: 360px;
         margin: 0 auto;
         border: 1px solid #eee;
-        border-radius: 0 0 10px 10px;
+        border-radius: 50px 50px 10px 10px;
+        overflow: hidden;
 
         @media #{$mobile}{
           width: 70%;
@@ -266,10 +267,6 @@ section#aboutme{
 
         >.myphoto{
           overflow: hidden;
-          background-image: url(./../images/aboutme/photo-frame.png);
-          background-position: center bottom;
-          background-size: cover;
-          background-repeat: no-repeat;
 
           >img{
             display: block;
@@ -278,6 +275,7 @@ section#aboutme{
             margin: -15px 0 0 0;
             width: 360px;
             height: auto;
+            border-radius: 50px;
 
             @media #{$mobile}{
               width: 100%;
@@ -288,7 +286,7 @@ section#aboutme{
         }//end of .myphoto
 
         >ol{
-          padding: 0 20px;
+          padding: 20px 20px ;
           >li{
             height: 45px;
             font-weight: 500;
@@ -474,7 +472,7 @@ section#portfolio{
           justify-content: space-between;
           position: absolute;
           left: 50%;
-          bottom: 35px;
+          bottom: 80px;
           z-index: 100;
           width: 200px;
           margin: 0;
@@ -525,7 +523,7 @@ section#portfolio{
         height: 750px;
         
         @media #{$mobile}{
-          height: 480px;
+          height: 550px;
         }
 
         >figure{
@@ -621,7 +619,7 @@ section#portfolio{
     >a{
       display: none;
       position: absolute;
-      bottom: 33px;
+      bottom: 80px;
       
       &.prev{
         left: 7%;
