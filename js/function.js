@@ -235,27 +235,25 @@ $(function(){
 });
 
 
-//portfolio
+//portfolio slide처리
 $(function(){
-
-    //페이드 슬라이드
     const $slides = $('#portfolio .slides-container>figure');
     const $indicator = $('#portfolio .slides-pagination>li>a');
 	const $btnNext = $('#portfolio .next');
 	const $btnPrev = $('#portfolio .prev');
 
     let nowIdx = 0;
-    let oldIdx = nowIdx;
+    let oldIdz = nowIdx;
 
-
-    function fadeFn(){
-        $slides.eq(oldIdx).stop().fadeOut(200);//이전 슬라이드 사라짐 처리
-        $slides.eq(nowIdx).stop().fadeIn(200).css({display:'block'});//이번에 나타날 슬라이드 처리
+    function slideFn(){
+        $slides.eq(oldIdx).stop().hide();//이전 슬라이드 사라짐 처리
+        $slides.eq(nowIdx).stop().show();//이번에 나타날 슬라이드 처리
         
         //활성화표시
         $indicator.eq(nowIdx).parent().addClass('on').siblings().removeClass('on');
     }
 
+    
     $indicator.on('click', function(evt){
 
         evt.preventDefault();
@@ -263,7 +261,7 @@ $(function(){
         oldIdx = nowIdx;
         nowIdx = $indicator.index(this);
 
-        fadeFn();
+        slideFn();
     });
 
 	$btnNext.on('click', function(evt){
@@ -277,7 +275,7 @@ $(function(){
 			nowIdx=0;
 		}
 
-		fadeFn();
+		slideFn();
 	});
 
 	$btnPrev.on('click', function(evt){
@@ -291,11 +289,15 @@ $(function(){
 			nowIdx--;
 		}
 
-		fadeFn();
-	});
+		slideFn();
+    });
+    
+});
 
 
 
+// ability chart영역
+$(function(){
 	//inview 이벤트는 화면이 요소가 출현했을 때 작동
 	$("#ability").on("inview", function(evt, visible){
 		if(visible==true){
@@ -368,7 +370,7 @@ $(function(){
         spreadFn("h4+div .ring");
     }, 3000);
 
-});
+ });
 
 
 //contact

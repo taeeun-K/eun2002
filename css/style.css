@@ -421,7 +421,7 @@ section#portfolio > .slides > .slides-pagination {
     justify-content: space-between;
     position: absolute;
     left: 50%;
-    bottom: 80px;
+    bottom: 50px;
     z-index: 100;
     width: 200px;
     margin: 0;
@@ -462,21 +462,11 @@ section#portfolio > .slides > .slides-pagination > li.on > a, section#portfolio 
 }
 section#portfolio > .slides > .slides-container {
   overflow: hidden;
-  position: relative;
   width: 100%;
-  height: 750px;
-}
-@media screen and (max-width:640px) {
-  section#portfolio > .slides > .slides-container {
-    height: 550px;
-  }
 }
 section#portfolio > .slides > .slides-container > figure {
   display: none;
   width: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
   text-align: center;
 }
 section#portfolio > .slides > .slides-container > figure:nth-child(1) {
@@ -517,14 +507,13 @@ section#portfolio > .slides > .slides-container > figure > .frame > a > img {
 }
 section#portfolio > .slides > .slides-container > figure > figcaption {
   width: 100%;
-  padding-top: 35px;
+  padding: 35px 0 80px;
 }
 @media screen and (max-width:640px) {
   section#portfolio > .slides > .slides-container > figure > figcaption {
     display: block;
     width: 80%;
     margin: 0 auto;
-    padding-bottom: 100px;
   }
 }
 section#portfolio > .slides > .slides-container > figure > figcaption > h3 {
@@ -560,7 +549,7 @@ section#portfolio > .slides > .slides-container > figure > figcaption > .etc {
 section#portfolio > .slides > a {
   display: none;
   position: absolute;
-  bottom: 80px;
+  bottom: 43px;
 }
 section#portfolio > .slides > a.prev {
   left: 7%;
