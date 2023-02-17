@@ -555,6 +555,7 @@ section#portfolio > .slides > .slides-container > figure > figcaption > .etc > s
 }
 section#portfolio > .slides > .slides-container > figure > figcaption > .etc {
   margin-top: 0;
+  margin-bottom: 20px;
 }
 section#portfolio > .slides > a {
   display: none;
