@@ -441,12 +441,17 @@ section#portfolio > .slides > .slides-pagination > li {
 }
 section#portfolio > .slides > .slides-pagination > li > a {
   display: block;
-  height: 40px;
+  padding-top: 5px;
+  height: 50px;
   font-weight: 700;
   font-size: 14px;
-  line-height: 40px;
   text-align: center;
   border: 1px solid #111;
+  box-sizing: border-box;
+}
+section#portfolio > .slides > .slides-pagination > li > a > span {
+  display: block;
+  font-size: 12px;
 }
 @media screen and (max-width:640px) {
   section#portfolio > .slides > .slides-pagination > li > a {
@@ -479,6 +484,31 @@ section#portfolio > .slides > .slides-container > figure > .frame {
   height: 500px;
   background: url(./../images/portfolio/bg_macbook.png) no-repeat center;
   background-size: contain;
+}
+section#portfolio > .slides > .slides-container > figure > .frame.mobile {
+  background: url(./../images/portfolio/mobile.png) no-repeat center;
+  background-size: contain;
+}
+section#portfolio > .slides > .slides-container > figure > .frame.mobile > a {
+  display: block;
+}
+section#portfolio > .slides > .slides-container > figure > .frame.mobile > a > img {
+  position: absolute;
+  left: 50%;
+  top: 11px;
+  margin-left: -119px;
+  width: 238px;
+  height: 472px;
+  border-radius: 20px;
+}
+@media screen and (max-width:640px) {
+  section#portfolio > .slides > .slides-container > figure > .frame.mobile > a > img {
+    left: 252px;
+    top: 5px;
+    width: 94px;
+    height: 186px;
+    border-radius: 7px;
+  }
 }
 @media screen and (max-width:640px) {
   section#portfolio > .slides > .slides-container > figure > .frame {

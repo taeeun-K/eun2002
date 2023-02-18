@@ -491,12 +491,18 @@ section#portfolio{
 
             >a{
                 display: block;
-                height: 40px;
+                padding-top: 5px;
+                height: 50px;
                 font-weight: 700;
                 font-size: 14px;
-                line-height: 40px;
                 text-align: center;
                 border: 1px solid #111;
+                box-sizing: border-box;
+
+                >span{
+                  display: block;
+                  font-size: 12px;
+                }
                 
                 @media #{$mobile}{
                   height: 10px;
@@ -538,6 +544,36 @@ section#portfolio{
               height: 500px;
               background: url(./../images/portfolio/bg_macbook.png) no-repeat center;
               background-size: contain;
+
+              &.mobile{
+                background: url(./../images/portfolio/mobile.png) no-repeat center;
+                background-size: contain;
+
+                >a{
+                  display: block;
+                  
+                  >img{
+                    position: absolute;
+                    left: 50%;
+                    top: 11px;
+                    margin-left: -119px;
+                    width: 238px;
+                    height: 472px;
+                    border-radius: 20px;
+                    
+                    
+                    @media #{$mobile}{
+                      left: 252px;
+                      top: 5px;
+                      width: 94px;
+                      height: 186px;
+                      border-radius: 7px;
+                      }
+                  }//end of img
+  
+                }//end of .frame>a
+
+              }
               
               @media #{$mobile}{
                 width: 360px;
