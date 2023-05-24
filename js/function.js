@@ -1,3 +1,20 @@
+// 로딩
+$(function(){
+	const $loading = $('.loading');
+	// 로딩중
+	$loading.children('p').show();
+	// $loading.hide();
+	$loading.delay(2000).hide(10, function(){
+		$(this).remove();
+	});	
+	$('header').addClass('active');
+
+	if($(window).width()<=640){
+		$loading.delay(0).hide();
+		$('header').addClass('active');
+	}
+})
+
 
 //네비게이션
 $(function() {
@@ -20,7 +37,7 @@ $(function() {
 			$header.addClass('fixed');
 			//const headerH = $header.outerHeight()
 			$('#aboutme').css({
-				marginTop: $header.height()
+				// marginTop: $header.height()
 			});
 			
 		} else {
@@ -31,229 +48,32 @@ $(function() {
 		}
 	}); //end of scroll
 
-
-    // 네비활성화
-    $nav.on('click', function(evt){
-        nowIdx = $indicator.index(this);
-
-        indicatorFn($nav);
-
-        evt.preventDefault();
-    });
 });
 
-
-
-$(function(){
-
-    //라이트박스
-    const $btnIAM = $(".detail a");
-    const $shadow = $(".detail  .shadow");
-    const $lightbox = $('.detail .lightbox');
-    const $btnClse = $(".detail .clse");
-
-    $btnIAM.on('click', function(evt){
-        evt.preventDefault();
-
-        $shadow.show();//그림자 노출
-        $lightbox.show();
-    })
-
-    //닫기
-    $btnClse.on('click', function(){
-        $lightbox.hide();
-        $shadow.hide();
-    });
-
-
-    //그림자영역을 클릭하면 닫힘
-    $shadow.on('click', function(){
-        $lightbox.hide();
-        $shadow.hide();
-    });
-
-
-    //이벤트전파 안되게 설정
-    $lightbox.on('click', function(evt){
-        evt.stopPropagation();
-    });
-
-
-    //ESC키를 이용한 닫기설정
-    $(document).on('keyup', function(evt){
-        console.log('현재 눌린 키의 번호는 '+ evt.which);
-        if(evt.which=='27'){
-            $lightbox.hide();
-            $shadow.hide();
-        }
-    });
-
-
-
-    //ability 영역
-	//inview 이벤트는 화면이 요소가 출현했을 때 작동
-	$("#ability").on("inview", function(evt, visible){
-		if(visible==true){
-			console.log("inview 이벤트 작동완료");
-/*			
-			$("#ability .bar").each(function(){
-				$(this).css({
-				//	"width" : $(this).children("span").text()
-				
-					"width" : $(this).parent().attr("data-bar")+"%"
-				});
-			});
-*/		
-
-			for(var i=0;i<=5;i++){
-				var $that = $("#ability .bar").eq(i);
-				$that.css({
-					"width" : $that.parent().attr("data-bar")+"%"
-				});
-			}
-		}
-	});
-	
-	
-
-	$(window).on("scroll", function(){
-        const scrollTop = $(this).scrollTop();
-
-		if(scrollTop < $("#ability").offset().top-$(this).height()){
-			
-			$("#ability .bar").width(0);
-		}
-     
-	});
-
-	
-	$(".piechart").on("inview", function(evt, visible){
-		
-		if(visible==true){
-			
-			$('.chart').easyPieChart({
-				//your configuration goes here
-				easing: 'easeInOutCubic',
-				delay: 3000,
-				barColor:'#68c3a3',
-				trackColor:'rgba(255,255,255,0.2)',
-				scaleColor: false,
-				lineWidth: 8,
-				size: 140,
-				animate: 2000,
-				onStep: function(from, to, percent) {
-					this.el.children[0].innerHTML = Math.round(percent);
-				}
-			});
-			
-			
-		}
-		
-	});
-	
-});
-
-
-//활성화 표시
-function indicatorFn($indicator){
-    $indicator.eq(nowIdx).parent().addClass('on').siblings().removeClass('on');
-}
-
-//#uxdesign 영역의 slides
-$(function(){
-
-    const $container = $('#uxdesign .slides-container');
-    const $indicator = $('#uxdesign .slides-pagination>li>a');
-    const $btnNext = $("#uxdesign .next");
-    const $btnPrev = $("#uxdesign .prev");
-    let nowIdx = 0;
-
-
-    //컨테이너 이동
-    function moveFn(){
-        //컨테이너 이동
-        $container.stop().animate({
-            left : -(nowIdx * 100) + '%'
-        },400,"easeInOutCubic",function(){
-            console.log("슬라이드 이동 완료~!");
-        });
-    }
-
-
-
-    $indicator.on('click', function(evt){
-        nowIdx = $indicator.index(this);
-
-        moveFn();
-        indicatorFn($indicator);
-
-        evt.preventDefault();
-    });
-
-    
-    $btnNext.on('click', function(evt){
- 
-        if(nowIdx<=2){
-            nowIdx++;
-        }else{
-            nowIdx = 0;
-        }
-
-        //컨테이너 이동
-        $container.stop().animate({left : '-100%'},400,"easeInOutCubic",function(){            
-            const $slides = $('.slides-container>li');//li 4개
-            $slides.first().appendTo($container);
-            $container.css({left:0});
-        });
-        
-        indicatorFn();//인디케이터 활성화
-
-        evt.preventDefault();
-    });
-
-
-    $btnPrev.on('click', function(evt){
-
-        // 보여줄 슬라이드에 대한 인덱스번호 추출
-       if(nowIdx>=1) {
-        nowIdx--;
-       }else{     
-         nowIdx=3;
-       };
-
-       const $slides = $('.slides-container>li');//li 4개
-
-       //컨테이너 이동
-       $slides.last().prependTo($container);
-       $container.css({left: '-100%'});
-       $container.stop().animate({left : 0},400,"easeInOutCubic",function(){});
-
-       indicatorFn();//인디케이터 활성화
-
-       evt.preventDefault();
-      });
-});
 
 
 //portfolio slide처리
 $(function(){
-    const $slides = $('#portfolio .slides-container>figure');
-    const $indicator = $('#portfolio .slides-pagination>li>a');
-	const $btnNext = $('#portfolio .next');
-	const $btnPrev = $('#portfolio .prev');
+    const $slides = $('.slides_box figure');
+    const $indicator = $('ul.slides_pagination li a');
+		const $btnNext = $('#portfolio .next');
+		const $btnPrev = $('#portfolio .prev');
+
+		const $thumbs = $('article.pofolSlide .thumb_box ul.slides_thumb li a');
 
     let nowIdx = 0;
-    let oldIdz = nowIdx;
+    let oldIdx = nowIdx;
 
     function slideFn(){
-        $slides.eq(oldIdx).stop().hide();//이전 슬라이드 사라짐 처리
-        $slides.eq(nowIdx).stop().show();//이번에 나타날 슬라이드 처리
+        $slides.eq(oldIdx).removeClass('active');//이전 슬라이드 사라짐 처리
+        $slides.eq(nowIdx).addClass('active');//이번에 나타날 슬라이드 처리
         
         //활성화표시
         $indicator.eq(nowIdx).parent().addClass('on').siblings().removeClass('on');
+        $thumbs.eq(nowIdx).parent().addClass('on').siblings().removeClass('on');
     }
 
-    
+    // 슬라이드상단 인디케이터
     $indicator.on('click', function(evt){
 
         evt.preventDefault();
@@ -263,6 +83,18 @@ $(function(){
 
         slideFn();
     });
+
+
+		// 슬라이드하단 썸네일
+		$thumbs.on('click', function(evt){
+
+			evt.preventDefault();
+
+			oldIdx = nowIdx;
+			nowIdx = $thumbs.index(this);
+
+			slideFn();
+	});
 
 	$btnNext.on('click', function(evt){
 		evt.preventDefault();
@@ -296,93 +128,6 @@ $(function(){
 
 
 
-// ability chart영역
-$(function(){
-	//inview 이벤트는 화면이 요소가 출현했을 때 작동
-	$("#ability").on("inview", function(evt, visible){
-		if(visible==true){
-			console.log("inview 이벤트 작동완료");
-/*			
-			$("#ability .bar").each(function(){
-				$(this).css({
-				//	"width" : $(this).children("span").text()
-				
-					"width" : $(this).parent().attr("data-bar")+"%"
-				});
-			});
-*/		
-
-			for(var i=0;i<=5;i++){
-				var $that = $("#ability .bar").eq(i);
-				$that.css({
-					"width" : $that.parent().attr("data-bar")+"%"
-				});
-			}
-		}
-	});
-	
-	
-	$(window).on("scroll", function(){
-		if($(this).scrollTop() < $("#ability").offset().top-$(this).height()){
-			$("#ability .bar").width(0);
-		}
-	});
-
-	
-	$(".piechart").on("inview", function(evt, visible){
-		
-		if(visible==true){
-			
-			$('.chart').easyPieChart({
-				//your configuration goes here
-				easing: 'easeInOutCubic',
-				delay: 3000,
-				barColor:'#68c3a3',
-				trackColor:'rgba(255,255,255,0.2)',
-				scaleColor: false,
-				lineWidth: 8,
-				size: 140,
-				animate: 2000,
-				onStep: function(from, to, percent) {
-					this.el.children[0].innerHTML = Math.round(percent);
-				}
-			});
-
-		}
-		
-	});
-
- 
-    const spreadFn = function (el) {
-        for (let i = 0; i < 6; i++) {
-            $(el).eq(i).delay((i * 100) + 100).fadeIn(600);
-        }
-
-        for (let k = 0; k < 6; k++) {
-            $(el).eq(k).delay((k + 6) * 100).fadeOut(600);
-        }
-    };
-
-    spreadFn(".ring");
-
-    setInterval(function(){
-        spreadFn("h4 .ring");
-        spreadFn("h4+div .ring");
-    }, 3000);
-
- });
-
-
-//contact
-$(function(){
-    
-    const $tit = $("#contact .apply>dl>dt>a");
-
-    $tit.on('click', function(evt){
-        evt.preventDefault();
-        $(this).parent().toggleClass('on').next().slideToggle(150);
-    });
-});
 
 //오른쪽 하단 탑버튼
 $(function() {
@@ -414,6 +159,7 @@ $(function() {
 			$aside.css({ marginBottom: 0 });
 		}
 	}); //end of scroll
+
 });
 
 
@@ -423,7 +169,7 @@ $(function(){
     const $header = $("header");
     const headerH = $header.outerHeight();//헤더의 높이(보더,패딩 포함해서 측정)
 
-	const $mnu = $('header>.container>nav>.gnb>li>a');//6개의 메뉴셀렉팅
+	const $mnu = $('header>.container>nav>.gnb>li>a');
     let idx = 0;//현재 선택된 메뉴의 인덱스
 
     let arrTopVal = [];//header이후에 나타나는 section의 top값
@@ -438,7 +184,7 @@ $(function(){
     //resize 이벤트는 브라우저의 크기가 바뀌면 일어남
     $(window).on('load resize', function(){
 
-        console.log("현재 메뉴의 개수 : "+$mnu.size());
+        // console.log("현재 메뉴의 개수 : "+$mnu.size());
         
         //어떤 요소의 top값(문서/브라우저/body로부터의 거리)를 구하는 방법 -> .offset().top
         //각 section의 top값을 자동으로 계산하는 장점
@@ -454,7 +200,7 @@ $(function(){
 
     $mnu.on('click', function(evt){
         //이번에 클릭한 요소의 index번호
-        idx = $mnu.index(this);//0~5
+        idx = $mnu.index(this);
         pageAni(arrTopVal[idx]-headerH+1);//fixed한 헤더의 높이값
         evt.preventDefault();
 
@@ -467,15 +213,14 @@ $(function(){
     $(window).on('scroll', function(){
 
         let scrollTop = $(this).scrollTop();
-        //console.log("scrollTop = ",scrollTop);
 
 
         //메뉴 활성화 표시
         for(let i=0;i<$mnu.size();i++){
-            if(scrollTop>=arrTopVal[i]-headerH-200){//fixed한 헤더의 높이값
+            if(scrollTop>=arrTopVal[i]-headerH-300){//fixed한 헤더의 높이값
                 $mnu.eq(i).parent().addClass('on');
                 $mnu.eq(i).parent().siblings().removeClass('on');
-            }else if(scrollTop<arrTopVal[0]-headerH-200){//비주얼 슬라이드 구간
+            }else if(scrollTop<arrTopVal[0]-headerH-300){//비주얼 슬라이드 구간
                 $mnu.parent().removeClass('on');
             }
         }
@@ -495,7 +240,5 @@ $(function(){
         pageAni(0);
     });
 
-
-
-
 });
+

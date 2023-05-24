@@ -1,10 +1,43 @@
 @charset "UTF-8";
+/*
 @font-face {
-  font-family: "MonoplexKR-Regular";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_Monoplex-kr@1.0/MonoplexKR-Regular.woff2") format("woff2");
+  font-family: 'MonoplexKR-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_Monoplex-kr@1.0/MonoplexKR-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'SDSamliphopangche_Basic';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Basic.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+*/
+@font-face {
+  font-family: 'NanumBarunGothic';
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot");
+  src: url("https://cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix") format("embedded-opentype"), url("https://cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff") format("woff"), url("https://cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf") format("truetype");
+  unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
+}
+
+@-webkit-keyframes mousewheel {
+  0% {
+    top: 5px;
+    opacity: 0;
+  }
+  30% {
+    top: 10px;
+    opacity: 1;
+  }
+  100% {
+    top: 25px;
+    opacity: 0;
+  }
+}
+
 @keyframes mousewheel {
   0% {
     top: 5px;
@@ -19,1043 +52,286 @@
     opacity: 0;
   }
 }
-body {
-  font-family: "MonoplexKR-Regular";
-}
 
-#wrap {
-  position: relative;
-  min-width: 1200px;
-}
-@media screen and (max-width:640px) {
-  #wrap {
-    min-width: 100%;
-  }
-}
+body {  font-family: 'NanumBarunGothic' ,'Noto Sans KR', sans-serif;  -ms-overflow-style: none;  /* 인터넷 익스플로러 */
+    scrollbar-width: none;  /* 파이어폭스 */}
+::-webkit-scrollbar {  /* 크롬, 사파리, 오페라, 엣지 동작 */  display: none;}
 
-header {
-  position: relative;
-  z-index: 1000;
-  width: 100%;
-  background-color: #fff;
-  border-bottom: 1px solid #eee;
-}
-header.fixed {
-  position: fixed;
-  left: 0;
-  top: 0;
-}
-header:after {
-  display: block;
-  position: absolute;
-  left: 0;
-  bottom: 1px;
-  width: 100%;
-  height: 2px;
-  border-bottom: 1px solid #eee;
-  content: "";
-}
-header > .container {
-  position: relative;
-  height: 66px;
-}
-header > .container > h2 {
-  position: absolute;
-  left: 7%;
-  top: 50%;
-  margin-top: -17px;
-  text-indent: 40px;
-  background-image: url(./../images/profile-logo-k.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-header > .container > h2 > a {
-  display: block;
-  height: 32px;
-  color: #000;
-  font-size: 26px;
-  line-height: 32px;
-}
-header > .container > .btn-gnb {
-  display: none;
-  cursor: pointer;
-}
-@media screen and (max-width:640px) {
-  header > .container > .btn-gnb {
-    background: none;
-    border: none;
-    outline: none;
-    display: block;
-    position: absolute;
-    right: 7%;
-    top: 50%;
-    width: 24px;
-    height: 18px;
-    margin-top: -9px;
-    text-indent: -9999px;
-    background-image: url(./../images/mnu_btn.png);
-    background-position: center center;
-    background-repeat: no-repeat;
-  }
-  header > .container > .btn-gnb.clse {
-    background-image: url(./../images/clse_btn.png);
+#wrap {  position: relative;}
+#wrap .loading {  position: fixed;  left: 0;  right: 0;  top: 0;  bottom: 0;  background-color: #fff;  z-index: 5000;  overflow-y: hidden;}
+#wrap .loading p {  position: absolute;  width: 100%;  height: 1000px;  text-indent: -9999px;  background: url(./../images/start_loading.gif) no-repeat center; background-size: 100px;  overflow-y: hidden;}
+header {  position: fixed;  z-index: 1000;  width: 100%;  background-color: #fff;  border-bottom: 1px solid #222;  -webkit-box-shadow: 0px 0px 30px #ddd;  box-shadow: 0px 0px 30px #ddd;  left: 0;  top: 0;}
+header.fixed {  position: fixed;  left: 0;  top: 0;}
+header.active:before, header.active:after {  left: 0;  -webkit-transition: all .3s ease-in;  transition: all .3s ease-in;}
+header:before {  display: block;  position: absolute;  left: 0;  bottom: 3px;  width: 100%;  content: '';}
+header .container {  position: relative;  height: 66px;}
+header .container h2 {  position: absolute;  left: 7%;  top: 50%;  margin-top: -17px;  text-indent: 40px;  background: url(./../images/profile-logo-k.png) no-repeat;  background-size: 27px; background-position: 0 4px;}
+header .container h2 a {  display: block;  height: 32px;  color: #000;  font-size: 23px;  line-height: 32px;}
+header .container .btn-gnb {  display: none;  cursor: pointer;}
+header .container nav {  position: absolute;  right: 7%;  top: 26px;}
+header .container nav .gnb {  display: -webkit-box;  display: -ms-flexbox;  display: flex;}
+header .container nav .gnb li { border-right: 1px solid #ccc;}
+header .container nav .gnb li:last-child { border-right: none;}
+header .container nav .gnb li a { display: block; height: 14px; padding: 0 15px; font-size: 18px; color: #222; font-weight: 600; line-height: 12px; -webkit-transition: all 0.2s; transition: all 0.2s;}
+header .container nav .gnb li.on a,
+header .container nav .gnb li:hover a {  color: #68C3A3;}
+
+
+
+header ~ section { padding-top: 35px;}
+header ~ section h2 { margin-bottom: 40px; color: #000; font-size: 26px; word-spacing: 2.5px; letter-spacing: 5.9px; line-height: 50px; text-align: left; text-transform: uppercase;}
+
+
+section#aboutme { width: 100%; height: 100vh; padding-top: 67px; -webkit-box-sizing: border-box; box-sizing: border-box; background-color: #f5f5f5; display: -webkit-box; display: -ms-flexbox; display: flex;}
+section#aboutme .aboutCont {  margin: auto;  width: 100%;  max-width: 1200px;}
+section#aboutme .aboutCont .aboutWrap {  margin: 0 auto;  width: 100%;  overflow: hidden;  padding-bottom: 30px;}
+section#aboutme .aboutCont .aboutWrap .profile {  width: 250px;  float: left;}
+section#aboutme .aboutCont .aboutWrap .profile div {  position: relative;  width: 250px;  margin: 0 0;  overflow: hidden;}
+section#aboutme .aboutCont .aboutWrap .profile div:after {  display: block;  position: absolute;  left: 0;  bottom: -3px;  width: 100%;  height: 20px;  content: '';}
+section#aboutme .aboutCont .aboutWrap .profile div h3.myphoto {  overflow: hidden;  width: 169px;  height: 220px;  border-radius: 6px;}
+section#aboutme .aboutCont .aboutWrap .profile div h3.myphoto img {  display: block;  position: relative;  margin: -14px 0 0 -35px;  width: 245px;  height: auto;}
+section#aboutme .aboutCont .aboutWrap .profile div ol li {  height: 45px;  font-weight: 500;  font-size: 14px;  line-height: 45px;}
+section#aboutme .aboutCont .aboutWrap .profile div ol li:last-child {    border-bottom: 0;}
+section#aboutme .aboutCont .aboutWrap .introduce {  float: left;  width: calc(100% - 250px);}
+section#aboutme .aboutCont .aboutWrap .introduce .introBox {  padding-left: 10%;}
+section#aboutme .aboutCont .aboutWrap .introduce .introBox h3 {  display: none;}
+section#aboutme .aboutCont .aboutWrap .introduce .introBox p {  margin-bottom: 25px;  font-size: 16px;  font-weight: 500;  line-height: 1.5;}
+section#aboutme .aboutCont .aboutWrap .introduce .introBox p mark {  background-color: #fcf8e3;}
+
+/********이력서 보기 버튼 */
+section#aboutme .aboutCont .aboutWrap .introduce .introBox .viewBox {  display: none;  margin-bottom: 50px;}
+section#aboutme .aboutCont .aboutWrap .introduce .introBox .viewBox a.viewBtn {  display: block;  margin-top: 50px;  width: 250px;  height: 40px;  font-size: 18px;  color: #000;  font-weight: 700;  line-height: 39px;  letter-spacing: 1px;  text-align: center;  background-color: #ffc90e;  -webkit-transition: all 0.2s;  transition: all 0.2s;}
+section#aboutme .aboutCont .aboutWrap .introduce .introBox .viewBox a.viewBtn:hover {  color: #fff;  background-color: #68C3A3;}
+
+/*** skill */
+section#aboutme .aboutCont .aboutWrap .introduce .introBox .skill h2 {  margin-bottom: 30px;  font-weight: 600;  font-size: 28px;}
+section#aboutme .aboutCont .aboutWrap .introduce .introBox .skill ol.skill-box {  width: 100%;  display: -webkit-box;  display: -ms-flexbox;  display: flex;  -webkit-box-orient: horizontal;  -webkit-box-direction: normal;      -ms-flex-flow: row wrap;          flex-flow: row wrap;  -webkit-box-pack: justify;      -ms-flex-pack: justify;          justify-content: space-between;
+}section#aboutme .aboutCont .aboutWrap .introduce .introBox .skill ol.skill-box li {  width: 50px;  height: 50px;  text-indent: -9999px;  border: 1px solid #444;  border-radius: 16px;}
+section#aboutme .aboutCont .aboutWrap .introduce .introBox .skill ol.skill-box li.html {  background: url(./../images/skill/skill_html.png) no-repeat center;  background-size: 80%;}
+section#aboutme .aboutCont .aboutWrap .introduce .introBox .skill ol.skill-box li.css {  background: url(./../images/skill/skill_css.png) no-repeat center;  background-size: 80%;}
+section#aboutme .aboutCont .aboutWrap .introduce .introBox .skill ol.skill-box li.sass {  background: url(./../images/skill/skill_sass.png) no-repeat center;  background-size: 80%;}
+section#aboutme .aboutCont .aboutWrap .introduce .introBox .skill ol.skill-box li.java {  background: url(./../images/skill/skill_js.png) no-repeat center;  background-size: 80%;}
+section#aboutme .aboutCont .aboutWrap .introduce .introBox .skill ol.skill-box li.zeplin {  background: url(./../images/skill/skill_zeplin.png) no-repeat center;  background-size: 80%;}
+section#aboutme .aboutCont .aboutWrap .introduce .introBox .skill ol.skill-box li.photoshop {  background: url(./../images/skill/skill_ps.png) no-repeat center;  background-size: 80%;}
+section#aboutme .aboutCont .aboutWrap .introduce .introBox .skill ol.skill-box li.illust {  background: url(./../images/skill/skill_illust.png) no-repeat center;  background-size: 80%;}
+
+
+
+section#portfolio {padding-top: 0; width: 100%; border-top: 1px solid #cdcdcd; border-bottom: 1px solid #cdcdcd; }
+section#portfolio .pofolCont { width: 100%; background: url(./../images/portfolio/pofol_background.jpg) fixed no-repeat; background-size: cover;}
+section#portfolio .pofolCont .slideContWrap{padding: 35px 0; width: 100%; max-width: 1200px;  margin: auto;  box-sizing: border-box; }
+section#portfolio .pofolCont h2 {  color: #fff;  text-shadow: 0 2px 5px #fff;}
+section#portfolio .pofolCont article.pofolSlide {width: 100%;}
+article.pofolSlide ul.slides_pagination{display: flex; flex-flow: row nowrap; justify-content: space-between; width: 100%; } 
+article.pofolSlide ul.slides_pagination li{padding: 5px 0; width: 150px; background-color: #fff; border: 1px solid #000; box-sizing: border-box;}
+article.pofolSlide ul.slides_pagination li:hover,
+article.pofolSlide ul.slides_pagination li.on{background-color: #ffc90e;}
+article.pofolSlide ul.slides_pagination li.on a,
+article.pofolSlide ul.slides_pagination li:hover a{color: #1c2236;}
+article.pofolSlide ul.slides_pagination li a{display: block; height: 40px; color: #000; font-weight: 600; text-align: center;}
+article.pofolSlide ul.slides_pagination li a span{display: block;}
+article.pofolSlide .slides_box{width: 100%;  display: -webkit-box; display: -ms-flexbox; display: flex; overflow: hidden;}
+article.pofolSlide .slides_box figure{display: none;  width: 100%;  text-align: center;  -webkit-box-sizing: border-box; box-sizing: border-box;}
+article.pofolSlide .slides_box figure.active{display: block;}
+article.pofolSlide .slides_box figure .frame{position: relative; width: 70%; height: 500px; float: left; background: url(./../images/portfolio/bg_macbook.png) no-repeat center; background-size: 100%;}
+article.pofolSlide .slides_box figure .frame a{display: block;}
+article.pofolSlide .slides_box figure .frame img{position: absolute; left: 92px; top: 55px; width: 664px; height: 366px;}
+article.pofolSlide .slides_box figure figcaption{width: 30%; height: 100%; float: right;   display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center;  margin: auto 0;}
+article.pofolSlide .slides_box figure figcaption .cap_box{width: 100%;}
+
+article.pofolSlide .slides_box figure figcaption .cap_box h3 {position: relative;font-weight: 600;font-size: 23px;line-height: 24px;}
+
+article.pofolSlide .slides_box figure figcaption .cap_box h3::after {position: absolute;left: 50%;bottom: -8px;margin-left: -140px;content: "";display: block;width: 280px;height: 1px;background-color: #fff;}
+
+article.pofolSlide .slides_box figure figcaption .cap_box h3 a {color: #fff;}
+
+article.pofolSlide .slides_box figure figcaption .cap_box .desc,
+article.pofolSlide .slides_box figure figcaption .cap_box .tools,
+article.pofolSlide .slides_box figure figcaption .cap_box .etc {margin-top: 20px;  font-size: 16px;  color: #fff;  font-weight: 500;  line-height: 24px;}
+
+article.pofolSlide .slides_box figure figcaption .cap_box .desc span,
+article.pofolSlide .slides_box figure figcaption .cap_box .tools span,
+article.pofolSlide .slides_box figure figcaption .cap_box .etc span {font-weight: 600;}
+article.pofolSlide .slides_box figure figcaption .cap_box .etc {margin-top: 0;  margin-bottom: 20px;}
+article.pofolSlide .slides_box figure figcaption .cap_box .desc br,
+article.pofolSlide .slides_box figure figcaption .cap_box .tools br,
+article.pofolSlide .slides_box figure figcaption .cap_box .etc br {display: none; }
+
+
+/********** gc지놈 슬라이드  */
+article.pofolSlide .slides_box figure figcaption.gcGenome{width: 50%; height: 100%;}
+article.pofolSlide .slides_box figure .frame.gcGenome{width: 50%; height: 580px; background: url(./../images/portfolio/mobile.png) no-repeat 271px; background-size: 265px;}
+article.pofolSlide .slides_box figure .frame.gcGenome img{left: 280px; top: 41px; width: 247px; height: 490px; border-radius: 18px;}
+
+
+article.pofolSlide .thumb_box{width: 100%;}
+article.pofolSlide .thumb_box ul.slides_thumb{width: 100%; display: flex; flex-flow: row nowrap; justify-content: space-between;}
+article.pofolSlide .thumb_box ul.slides_thumb li{width: 160px; height: 110px; overflow: hidden; border: 3px solid #fff;}
+article.pofolSlide .thumb_box ul.slides_thumb li:hover{border-color: #ffc90e; transition: all .3s ease-in-out;}
+article.pofolSlide .thumb_box ul.slides_thumb li a{display: block; height: 110px;}
+article.pofolSlide .thumb_box ul.slides_thumb li a span{display: none;}
+article.pofolSlide .thumb_box ul.slides_thumb li a img{width: 100%; height: 110px;}
+
+
+/* 슬라이드 버튼 (모바일만) */
+article.pofolSlide a.slideBtn {  display: none;  position: absolute;  bottom: 25px;  width: 20px;  height: 60px;}
+article.pofolSlide a.slideBtn.prev {  left: 10%;  background: url(./../images/slides/mysite_slides_btn_arrow.png) no-repeat;  background-size: 20px;  background-position: 10px -72px;}
+article.pofolSlide a.slideBtn.next {  right: 10%;  background: url(./../images/slides/mysite_slides_btn_arrow.png) no-repeat;  background-size: 20px;  background-position: 10px -39px;}
+
+/* 게임 슬라이드 프로젝트 */
+section#portfolio article.project{padding: 35px 0 60px 0; max-width: 1200px; width: 100%; margin: 0 auto; box-sizing: border-box;}
+section#portfolio article.project ul.Work_list{width: 100%; display: flex; flex-flow: row wrap; justify-content: space-between;}
+section#portfolio article.project ul.Work_list li{width: 50%; text-align: center;}
+section#portfolio article.project ul.Work_list li a{display: block; height: 200px;}
+section#portfolio article.project ul.Work_list li a span{display: none;}
+section#portfolio article.project ul.Work_list li a img{width: 300px; height: 200px; border: 3px solid #e8e8e8;}
+
+
+
+
+section#contact {padding-top: 0; width: 100%; height: 100vh; -webkit-box-sizing: border-box; box-sizing: border-box; background-color: #f5f5f5; display: -webkit-box; display: -ms-flexbox; display: flex;}
+section#contact .contactCont {  margin: auto;  width: 100%;  max-width: 1200px;}
+section#contact .contactCont h2{margin-bottom: 60px; text-align: center;}
+section#contact .contactCont article.fin {margin: auto 0; width: 100%; padding-bottom: 30px; overflow: hidden;}
+section#contact .contactCont article.fin .finish-talk {  margin: 10px 0;}
+section#contact .contactCont article.fin .finish-talk h2 {  left: 75px;  top: 35px;  font-size: 25px;  font-weight: 500;}
+section#contact .contactCont article.fin .finish-talk p {  margin-bottom: 20px;  text-align: center;  font-size: 18px;  line-height: 1.7em;}
+section#contact .contactCont article.fin .finish-talk p strong{color: #6ecbef; text-shadow: 1px 5px 8px #ccc;}
+
+
+
+
+footer {width: 100%;}
+footer .working {  border-top: 1px solid #aaa;}
+footer .working p {  padding-left: 7%;  height: 80px;  line-height: 80px;}
+footer .working p a {  margin: 0 30px;}
+footer .working p a:hover {  text-decoration: underline;}
+footer .info {  background-color: #444;}
+footer .info .footerBox {  position: relative;  padding: 45px 7% 40px;}
+footer .info .footerBox h2,
+footer .info .footerBox p {  margin-bottom: 15px;  color: #fff;  font-size: 13px;}
+footer .info .footerBox h2 a,
+footer .info .footerBox p a {  color: #aaa;}
+footer .info .footerBox h2.iam,
+footer .info .footerBox p.iam {  margin-bottom: 0;}
+
+
+aside {  position: fixed;  right: 30px;  bottom: 30px;  z-index: 1000;  margin: 0;}
+aside a {  display: block;  width: 39px;  height: 37px;  text-align: center;  background: url(./../images/btn_top.png) no-repeat center;  background-size: 17px;}
+aside a span.hide {  display: none;}
+/*# sourceMappingURL=style.css.map */
+
+
+
+@media screen and (max-width: 1160px) {
+  *{ margin: 0;padding: 0;}
+  #wrap {width: 100%;}
+
+  header .container .btn-gnb { background: none; border: none; outline: none; display: block; position: absolute; right: 7%; top: 50%; width: 24px; height: 18px; margin-top: -9px; text-indent: -9999px; background-image: url(./../images/mnu_btn.png); background-position: center center; background-repeat: no-repeat; }
+  header .container .btn-gnb.clse { background-image: url(./../images/clse_btn.png); }
+
+  @-webkit-keyframes rotateBtn {
+    0% {
+      -webkit-transform: rotate(0);
+              transform: rotate(0);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
   }
   @keyframes rotateBtn {
     0% {
-      transform: rotate(0);
+      -webkit-transform: rotate(0);
+              transform: rotate(0);
     }
     100% {
-      transform: rotate(360deg);
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
     }
   }
-  header > .container > .btn-gnb.clse:hover {
-    animation: rotateBtn 0.5s;
-  }
-}
-header > .container > nav {
-  position: absolute;
-  right: 7%;
-  top: 26px;
-}
-@media screen and (max-width:640px) {
-  header > .container > nav {
-    display: none;
-    right: initial;
-    left: 0;
-    top: 66px;
-    width: 100%;
-  }
-}
-header > .container > nav > .gnb {
-  display: flex;
-}
-@media screen and (max-width:640px) {
-  header > .container > nav > .gnb {
-    display: initial;
-  }
-}
-header > .container > nav > .gnb > li {
-  border-right: 1px solid #ccc;
-}
-@media screen and (max-width:640px) {
-  header > .container > nav > .gnb > li {
-    border-right: none;
-    background-color: #fff;
-    border-bottom: 1px solid #eeeeee;
-  }
-}
-header > .container > nav > .gnb > li:last-child {
-  border-right: none;
-}
-header > .container > nav > .gnb > li > a {
-  display: block;
-  height: 14px;
-  padding: 0 15px;
-  color: #666;
-  font-weight: 500;
-  line-height: 12px;
-  transition: all 0.2s;
-}
-@media screen and (max-width:640px) {
-  header > .container > nav > .gnb > li > a {
-    height: 48px;
-    padding: 0;
-    line-height: 48px;
-    text-indent: 7%;
-  }
-}
-header > .container > nav > .gnb > li.on > a, header > .container > nav > .gnb > li:hover > a {
-  color: #ffc90e;
-}
 
-header ~ section {
-  padding-top: 80px;
-}
-header ~ section > h2 {
-  margin-bottom: 72px;
-  color: #2C3E50;
-  font-size: 50px;
-  line-height: 50px;
-  text-align: center;
-}
-header ~ section > h2:after {
-  display: block;
-  width: 138px;
-  height: 15px;
-  margin: 30px auto 0;
-  background-image: url(./../images/deco_tit.png);
-  content: "";
-}
+  header .container .btn-gnb.clse:hover { -webkit-animation: rotateBtn 0.5s; animation: rotateBtn 0.5s; }
 
-@media screen and (max-width:640px) {
-  section#aboutme {
-    width: 100%;
-  }
-}
-section#aboutme > .container {
-  display: flex;
-  flex-flow: row-reverse nowrap;
-  padding-bottom: 30px;
-}
-@media screen and (max-width:640px) {
-  section#aboutme > .container {
-    display: block;
-    padding-bottom: 0;
-  }
-}
-section#aboutme > .container > .profile {
-  width: 33.33333%;
-}
-@media screen and (max-width:640px) {
-  section#aboutme > .container > .profile {
-    width: 100%;
-  }
-}
-section#aboutme > .container > .profile > div {
-  position: relative;
-  width: 360px;
-  margin: 0 auto;
-  border: 1px solid #eee;
-  border-radius: 50px 50px 10px 10px;
-  overflow: hidden;
-}
-@media screen and (max-width:640px) {
-  section#aboutme > .container > .profile > div {
-    width: 70%;
-  }
-}
-section#aboutme > .container > .profile > div:after {
-  display: block;
-  position: absolute;
-  left: 0;
-  bottom: -3px;
-  width: 100%;
-  height: 20px;
-  border-bottom: 1px solid #eee;
-  border-radius: 0 0 10px 10px;
-  content: "";
-}
-section#aboutme > .container > .profile > div > .myphoto {
-  overflow: hidden;
-}
-section#aboutme > .container > .profile > div > .myphoto > img {
-  display: block;
-  position: relative;
-  z-index: -1;
-  margin: -15px 0 0 0;
-  width: 360px;
-  height: auto;
-  border-radius: 50px;
-}
-@media screen and (max-width:640px) {
-  section#aboutme > .container > .profile > div > .myphoto > img {
-    width: 100%;
-    height: auto;
-    margin: 0;
-  }
-}
-section#aboutme > .container > .profile > div > ol {
-  padding: 20px 20px;
-}
-section#aboutme > .container > .profile > div > ol > li {
-  height: 45px;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 45px;
-  border-bottom: 1px solid #eee;
-}
-@media screen and (max-width:640px) {
-  section#aboutme > .container > .profile > div > ol > li {
-    font-size: 12px;
-    height: 30px;
-    line-height: 30px;
-  }
-}
-section#aboutme > .container > .profile > div > ol > li:last-child {
-  border-bottom: 0;
-}
-section#aboutme > .container > .biography {
-  width: 66.66666%;
-}
-@media screen and (max-width:640px) {
-  section#aboutme > .container > .biography {
-    width: 100%;
-    margin-top: 48px;
-  }
-}
-section#aboutme > .container > .biography > .detail {
-  margin-bottom: 64px;
-  padding-left: 10%;
-}
-@media screen and (max-width:640px) {
-  section#aboutme > .container > .biography > .detail {
-    padding: 0 5%;
-  }
-}
-section#aboutme > .container > .biography > .detail > h3 {
-  margin-bottom: 30px;
-  font-weight: 500;
-  font-size: 25px;
-}
-section#aboutme > .container > .biography > .detail > p {
-  margin-bottom: 20px;
-  font-size: 14px;
-  font-weight: 500;
-}
-@media screen and (max-width:640px) {
-  section#aboutme > .container > .biography > .detail > p > br {
-    display: none;
-  }
-}
-section#aboutme > .container > .biography > .detail > p > mark {
-  background-color: #fcf8e3;
-}
-section#aboutme > .container > .biography > .detail > a {
-  display: block;
-  width: 260px;
-  height: 40px;
-  color: #fff;
-  line-height: 40px;
-  letter-spacing: 1px;
-  text-align: center;
-  background-color: #222;
-  transition: all 0.2s;
-}
-@media screen and (max-width:640px) {
-  section#aboutme > .container > .biography > .detail > a {
-    display: none;
-  }
-}
-section#aboutme > .container > .biography > .detail > a:hover {
-  background-color: #ffc90e;
-}
-section#aboutme > .container > .biography > .detail > .shadow {
-  display: none;
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1000;
-  /* opacity: 0.75; */
-}
-section#aboutme > .container > .biography > .detail > .shadow > .lightbox {
-  display: block;
-  overflow-y: scroll;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 1200px;
-  height: 800px;
-  margin: -400px 0 0 -600px;
-}
-section#aboutme > .container > .biography > .detail > .shadow > .lightbox > img {
-  display: block;
-  width: 100%;
-}
-section#aboutme > .container > .biography > .detail > .shadow > .clse {
-  display: block;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  margin: 370px 0 0 540px;
-}
-section#aboutme > .container > .biography > .detail > .ican {
-  display: flex;
-  flex-flow: row wrap;
-  margin-top: 80px;
-}
-@media screen and (max-width:640px) {
-  section#aboutme > .container > .biography > .detail > .ican {
-    margin-top: 50px;
-  }
-}
-section#aboutme > .container > .biography > .detail > .ican > li {
-  width: 345px;
-  height: 40px;
-  font-size: 16px;
-  line-height: 40px;
-}
-section#aboutme > .container > .biography > .detail > .ican > li:before {
-  margin-right: 10px;
-  color: #ffc90e;
-  font-family: "Font Awesome 5 Free";
-  content: "\f14a";
-}
+  header .container nav { display: none; right: initial; left: 0; top: 66px; width: 100%; }
+  header .container nav .gnb { display: initial; }
+  header .container nav .gnb li { border-right: none; background-color: #fff; border-bottom: 1px solid #eeeeee; }
+  header .container nav .gnb li a { height: 48px; padding: 0; line-height: 48px; text-indent: 7%; }
 
-section#portfolio {
-  width: 100%;
-  border-top: 1px solid #cdcdcd;
-  border-bottom: 1px solid #cdcdcd;
-  background-color: #dedede;
-}
-section#portfolio > article {
-  width: 1200px;
-  margin: 0 auto;
-}
-@media screen and (max-width:640px) {
-  section#portfolio > article {
-    width: 100%;
-    margin: 0;
-  }
-}
-section#portfolio > .slides {
-  position: relative;
-}
-@media screen and (max-width:640px) {
-  section#portfolio > .slides {
-    display: flex;
-    flex-flow: column-reverse nowrap;
-    justify-content: space-between;
-  }
-}
-section#portfolio > .slides > .slides-pagination {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  margin: 0 auto 30px;
-}
-@media screen and (max-width:640px) {
-  section#portfolio > .slides > .slides-pagination {
-    justify-content: space-between;
-    position: absolute;
-    left: 50%;
-    bottom: 50px;
-    z-index: 100;
-    width: 200px;
-    margin: 0;
-    margin-left: -90px;
-    background-color: #ddd;
-    border-radius: 50px;
-  }
-}
-section#portfolio > .slides > .slides-pagination > li {
-  width: 150px;
-  background-color: #fff;
-}
-@media screen and (max-width:640px) {
-  section#portfolio > .slides > .slides-pagination > li {
-    width: 80px;
-  }
-}
-section#portfolio > .slides > .slides-pagination > li > a {
-  display: block;
-  padding-top: 5px;
-  height: 50px;
-  font-weight: 700;
-  font-size: 14px;
-  text-align: center;
-  border: 1px solid #111;
-  box-sizing: border-box;
-}
-section#portfolio > .slides > .slides-pagination > li > a > span {
-  display: block;
-  font-size: 12px;
-}
-@media screen and (max-width:640px) {
-  section#portfolio > .slides > .slides-pagination > li > a {
-    height: 10px;
-    text-indent: -9999px;
-    border-radius: 50px;
-    transition: all 0.5s;
-  }
-}
-section#portfolio > .slides > .slides-pagination > li.on > a, section#portfolio > .slides > .slides-pagination > li:hover > a {
-  color: #333333;
-  background-color: #ffc90e;
-}
-section#portfolio > .slides > .slides-container {
-  overflow: hidden;
-  width: 100%;
-}
-section#portfolio > .slides > .slides-container > figure {
-  display: none;
-  width: 100%;
-  text-align: center;
-}
-section#portfolio > .slides > .slides-container > figure:nth-child(1) {
-  display: block;
-}
-section#portfolio > .slides > .slides-container > figure > .frame {
-  display: block;
-  position: relative;
-  width: 100%;
-  height: 500px;
-  background: url(./../images/portfolio/bg_macbook.png) no-repeat center;
-  background-size: contain;
-}
-section#portfolio > .slides > .slides-container > figure > .frame.mobile {
-  background: url(./../images/portfolio/mobile.png) no-repeat center;
-  background-size: contain;
-}
-section#portfolio > .slides > .slides-container > figure > .frame.mobile > a {
-  display: block;
-}
-section#portfolio > .slides > .slides-container > figure > .frame.mobile > a > img {
-  position: absolute;
-  left: 50%;
-  top: 11px;
-  margin-left: -119px;
-  width: 238px;
-  height: 472px;
-  border-radius: 20px;
-}
-@media screen and (max-width:640px) {
-  section#portfolio > .slides > .slides-container > figure > .frame.mobile > a > img {
-    left: 252px;
-    top: 5px;
-    width: 94px;
-    height: 186px;
-    border-radius: 7px;
-  }
-}
-@media screen and (max-width:640px) {
-  section#portfolio > .slides > .slides-container > figure > .frame {
-    width: 360px;
-    height: 198px;
-    margin: 0 auto;
-    background-size: contain;
-  }
-}
-section#portfolio > .slides > .slides-container > figure > .frame > a {
-  display: block;
-}
-section#portfolio > .slides > .slides-container > figure > .frame > a > img {
-  position: absolute;
-  left: 50%;
-  top: 35px;
-  margin-left: -360px;
-  width: 730px;
-}
-@media screen and (max-width:640px) {
-  section#portfolio > .slides > .slides-container > figure > .frame > a > img {
-    left: 402px;
-    top: 17px;
-    width: 280px;
-  }
-}
-section#portfolio > .slides > .slides-container > figure > figcaption {
-  width: 100%;
-  padding: 35px 0 80px;
-}
-@media screen and (max-width:640px) {
-  section#portfolio > .slides > .slides-container > figure > figcaption {
-    display: block;
-    width: 80%;
-    margin: 0 auto;
-  }
-}
-section#portfolio > .slides > .slides-container > figure > figcaption > h3 {
-  font-weight: 600;
-  font-size: 23px;
-  line-height: 24px;
-  text-decoration: underline;
-}
-section#portfolio > .slides > .slides-container > figure > figcaption > .desc,
-section#portfolio > .slides > .slides-container > figure > figcaption > .tools,
-section#portfolio > .slides > .slides-container > figure > figcaption > .etc {
-  margin-top: 20px;
-  color: #404040;
-  font-weight: 500;
-  line-height: 24px;
-}
-section#portfolio > .slides > .slides-container > figure > figcaption > .desc > span,
-section#portfolio > .slides > .slides-container > figure > figcaption > .tools > span,
-section#portfolio > .slides > .slides-container > figure > figcaption > .etc > span {
-  font-weight: 600;
-}
-@media screen and (max-width:640px) {
-  section#portfolio > .slides > .slides-container > figure > figcaption > .desc br,
-  section#portfolio > .slides > .slides-container > figure > figcaption > .tools br,
-  section#portfolio > .slides > .slides-container > figure > figcaption > .etc br {
-    display: none;
-  }
-}
-section#portfolio > .slides > .slides-container > figure > figcaption > .etc {
-  margin-top: 0;
-  margin-bottom: 20px;
-}
-section#portfolio > .slides > a {
-  display: none;
-  position: absolute;
-  bottom: 43px;
-}
-section#portfolio > .slides > a.prev {
-  left: 7%;
-  background: url(./../images/portfolio/btn_prev.png) no-repeat center;
-  background-size: contain;
-}
-section#portfolio > .slides > a.next {
-  right: 7%;
-  background: url(./../images/portfolio/btn_next.png) no-repeat center;
-  background-size: contain;
-}
-@media screen and (max-width:640px) {
-  section#portfolio > .slides > a {
-    display: block;
-    width: 40px;
-    height: 25px;
-    text-indent: -9999px;
-  }
-}
+  header ~ section h2 { margin-bottom: 20px; font-size: 20px; text-align: center;}
 
-section#skill > article.skill-1 {
-  margin-bottom: 120px;
-}
-@media screen and (max-width:640px) {
-  section#skill > article.skill-1 {
-    margin-bottom: 40px;
-    padding-bottom: 40px;
-    border-bottom: 1px solid #eee;
-  }
-}
-section#skill > article > h3 {
-  margin-bottom: 80px;
-  font-weight: 500;
-  font-size: 25px;
-  line-height: 48px;
-  text-align: center;
-}
-@media screen and (max-width:640px) {
-  section#skill > article > h3 {
-    margin-bottom: 40px;
-    font-size: 25px;
-  }
-}
-section#skill > article > h3 > span {
-  display: block;
-}
-section#skill > article > ol {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-@media screen and (max-width:640px) {
-  section#skill > article > ol {
-    display: block;
-    width: 90%;
-    margin: 0 auto;
-  }
-}
-section#skill > article > ol > li {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  width: 45%;
-  height: 150px;
-  padding-left: 180px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  box-sizing: border-box;
-}
-@media screen and (max-width:640px) {
-  section#skill > article > ol > li {
-    width: 100%;
-    background-size: 100px;
-    background-position: 0 center;
-    margin-bottom: 10px;
-    padding-left: 120px;
-  }
-  section#skill > article > ol > li:first-child {
-    margin-bottom: 40px;
-  }
-}
-section#skill > article > ol > li > h4 {
-  margin-bottom: 30px;
-  font-weight: 500;
-  font-size: 24px;
-}
-@media screen and (max-width:640px) {
-  section#skill > article > ol > li > h4 {
-    margin-bottom: 15px;
-    font-size: 20px;
-  }
-}
-section#skill > article > ol > li > p {
-  line-height: 1.6;
-}
-section#skill > article.skill-1 li:first-child {
-  padding-left: 360px;
-  background-image: url(./../images/skill/skill01.png);
-  background-position: 180px 0;
-}
-@media screen and (max-width:640px) {
-  section#skill > article.skill-1 li:first-child {
-    padding-left: 120px;
-    background-position: 0 center;
-  }
-}
-section#skill > article.skill-1 li:last-child {
-  background-image: url(./../images/skill/skill02.png);
-}
-section#skill > article.skill-2 li:first-child {
-  padding-left: 360px;
-  background-image: url(./../images/skill/skill03.png);
-  background-position: 180px 0;
-}
-@media screen and (max-width:640px) {
-  section#skill > article.skill-2 li:first-child {
-    padding-left: 120px;
-    background-position: 0 center;
-  }
-}
-section#skill > article.skill-2 li:last-child {
-  background-image: url(./../images/skill/skill04.png);
-}
 
-section#ability {
-  margin-top: 100px;
-  background-color: #222;
-}
-section#ability > h2 {
-  color: #fff;
-}
-section#ability > .ability-container {
-  padding-bottom: 50px;
-}
-section#ability > .ability-container > .stick {
-  display: flex;
-  justify-content: space-around;
-}
-@media screen and (max-width:640px) {
-  section#ability > .ability-container > .stick {
-    display: block;
-  }
-}
-section#ability > .ability-container > .stick > .stick-container {
-  width: 43%;
-}
-@media screen and (max-width:640px) {
-  section#ability > .ability-container > .stick > .stick-container {
-    width: 100%;
-  }
-}
-section#ability > .ability-container > .stick > .stick-container > .item {
-  margin-bottom: 40px;
-  display: flex;
-}
-@media screen and (max-width:640px) {
-  section#ability > .ability-container > .stick > .stick-container > .item {
-    padding: 0 7%;
-  }
-}
-section#ability > .ability-container > .stick > .stick-container > .item > h3 {
-  width: 17%;
-  height: 10px;
-  padding-right: 8%;
-  color: #fff;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 10px;
-  text-align: right;
-}
-@media screen and (max-width:640px) {
-  section#ability > .ability-container > .stick > .stick-container > .item > h3 {
-    font-size: 15px;
-  }
-}
-section#ability > .ability-container > .stick > .stick-container > .item .progress {
-  position: relative;
-  width: 75%;
-  height: 10px;
-  background-color: #3a4149;
-  border-radius: 3px;
-}
-section#ability > .ability-container > .stick > .stick-container > .item .progress .bar {
-  height: 100%;
-  /* width: 100px; js에서 동적으로 할당 */
-  width: 0;
-  background-color: #ffc90e;
-  transition: all 2s ease-in-out;
-}
-section#ability > .ability-container > .stick > .stick-container > .item .progress .bar > span {
-  position: absolute;
-  top: -20px;
-  right: 15px;
-  color: #fff;
-}
-section#ability > .ability-container > .piechart {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 40px;
-}
-@media screen and (max-width:640px) {
-  section#ability > .ability-container > .piechart {
-    display: none;
-  }
-}
-section#ability > .ability-container > .piechart > .item {
-  width: 140px;
-  height: 200px;
-}
-section#ability > .ability-container > .piechart > .item > .chart {
-  position: relative;
-  width: 140px;
-  height: 140px;
-  text-align: center;
-}
-section#ability > .ability-container > .piechart > .item > .chart canvas {
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-section#ability > .ability-container > .piechart > .item > .chart > .percent {
-  color: #fff;
-  font-weight: 500;
-  font-size: 25px;
-  line-height: 140px;
-}
-section#ability > .ability-container > .piechart > .item > .chart > .percent:after {
-  content: "%";
-}
-section#ability > .ability-container > .piechart > .item > .chart > .tit {
-  height: 60px;
-  color: #fcf8e3;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 60px;
-}
+  /****여기부터 section#aboutme */
+  section#aboutme { width: 100%; height: auto;}
+  section#aboutme .aboutCont{max-width: 640px; text-align: center;}
+  section#aboutme .aboutCont .aboutWrap { display: block; width: 100%; }
+  section#aboutme .aboutCont .aboutWrap .profile { width: 100%; }
+  section#aboutme .aboutCont .aboutWrap .profile div { width: 100%; }
+  section#aboutme .aboutCont .aboutWrap .profile div h3.myphoto {margin: 0 auto;}
+  section#aboutme .aboutCont .aboutWrap .profile div h3.myphoto img { width: 100%; height: auto; margin: 0; }
+  section#aboutme .aboutCont .aboutWrap .profile div ol li { font-size: 12px; height: 30px; line-height: 30px; }
+  section#aboutme .aboutCont .aboutWrap .introduce { width: 100%; margin-top: 48px; }
+  section#aboutme .aboutCont .aboutWrap .introduce .introBox { width: 100%; padding: 0 5%; box-sizing: border-box; white-space: normal;}
+  section#aboutme .aboutCont .aboutWrap .introduce .introBox p { font-size: 14px; }
+  section#aboutme .aboutCont .aboutWrap .introduce .introBox p br { display: none; }
 
-section#contact {
-  width: 1200px;
-  margin: 0 auto 50px;
-}
-@media screen and (max-width:640px) {
-  section#contact {
-    width: 100%;
-  }
-}
-section#contact > .apply {
-  border: 1px solid #e4e4e4;
-  border-radius: 5px;
-  box-sizing: border-box;
-}
-@media screen and (max-width:640px) {
-  section#contact > .apply {
-    border: none;
-  }
-}
-section#contact > .apply > .help {
-  position: relative;
-  height: 110px;
-  margin-bottom: 10px;
-  border-bottom: 1px solid #e4e4e4;
-}
-@media screen and (max-width:640px) {
-  section#contact > .apply > .help {
-    position: initial;
-    width: 90%;
-    height: 200px;
-    margin: 0 auto;
-  }
-}
-section#contact > .apply > .help > h2 {
-  position: absolute;
-  left: 75px;
-  top: 35px;
-  font-size: 25px;
-  font-weight: 500;
-}
-@media screen and (max-width:640px) {
-  section#contact > .apply > .help > h2 {
-    position: initial;
-  }
-}
-section#contact > .apply > .help > h2:after {
-  display: block;
-  position: absolute;
-  right: -50px;
-  top: -5px;
-  width: 1px;
-  height: 50px;
-  background-color: #ccc;
-  content: "";
-}
-@media screen and (max-width:640px) {
-  section#contact > .apply > .help > h2:after {
-    display: none;
-  }
-}
-section#contact > .apply > .help > p {
-  position: absolute;
-  left: 610px;
-  top: 30px;
-  height: 120px;
-  font-size: 18px;
-  line-height: 1.7em;
-}
-@media screen and (max-width:640px) {
-  section#contact > .apply > .help > p {
-    position: initial;
-    height: 150px;
-    margin-top: 10px;
-  }
-}
-@media screen and (max-width:640px) {
-  section#contact > .apply > dl {
-    width: 90%;
-    margin: 0 auto;
-  }
-}
-section#contact > .apply > dl > dt.on {
-  background-color: #52B3D9;
-}
-section#contact > .apply > dl > dt.on > a > span.arr {
-  background-image: url(./../images/contact/after_up.png);
-}
-section#contact > .apply > dl > dt > a {
-  position: relative;
-  display: block;
-  width: 90%;
-  height: 70px;
-  margin: 0 auto;
-  font-size: 14px;
-  line-height: 70px;
-  border-bottom: 1px solid #e4e4e4;
-}
-@media screen and (max-width:640px) {
-  section#contact > .apply > dl > dt > a {
-    margin-left: 0;
-    width: 100%;
-  }
-}
-section#contact > .apply > dl > dt > a > span.arr {
-  display: block;
-  position: absolute;
-  right: 0;
-  top: 35px;
-  width: 15px;
-  height: 19px;
-  text-indent: -9999px;
-  background-image: url(../images/contact/after_down.png);
-  background-repeat: no-repeat;
-}
-section#contact > .apply > dl > dd {
-  display: none;
-  background-color: #f8f8f8;
-}
-section#contact > .apply > dl > dd > .answer {
-  margin: 0 90px;
-  padding: 40px 0;
-}
-@media screen and (max-width:640px) {
-  section#contact > .apply > dl > dd > .answer {
-    width: 90%;
-    margin: 0 20px;
-  }
-}
-section#contact > .apply > p {
-  display: flex;
-  align-items: center;
-  height: 100px;
-  margin-top: 50px;
-  color: #505050;
-  font-size: 14px;
-  line-height: 32px;
-  padding-left: 70px;
-  background-color: #f8f8f8;
-}
-@media screen and (max-width:640px) {
-  section#contact > .apply > p {
-    width: 100%;
-    height: 150px;
-    margin-top: 10px;
-    margin-bottom: 50px;
-    padding: 0 20px;
-    font-weight: 500;
-    text-align: center;
-    box-sizing: border-box;
-  }
-}
+  section#aboutme .aboutCont .aboutWrap .introduce .introBox .skill h2{padding-left: 0; font-size: 20px;}
+  
 
-footer {
-  min-width: 1200px;
-}
-@media screen and (max-width:640px) {
-  footer {
-    min-width: 100%;
-  }
-}
-footer > .working {
-  border-top: 1px solid #aaa;
-}
-footer > .working > p {
-  padding-left: 7%;
-  height: 80px;
-  line-height: 80px;
-}
-footer > .working > p > a {
-  margin: 0 30px;
-}
-footer > .working > p > a:hover {
-  text-decoration: underline;
-}
-@media screen and (max-width:640px) {
-  footer > .working > p > time {
-    display: none;
-  }
-}
-footer > .info {
-  background-color: #222;
-}
-footer > .info > .container {
-  position: relative;
-  padding: 45px 7% 40px;
-}
-footer > .info > .container > h2,
-footer > .info > .container > p {
-  margin-bottom: 15px;
-  color: #aaa;
-  font-size: 13px;
-}
-@media screen and (max-width:640px) {
-  footer > .info > .container > h2,
-  footer > .info > .container > p {
-    margin-bottom: 10px;
-  }
-}
-footer > .info > .container > h2 > a,
-footer > .info > .container > p > a {
-  color: #aaa;
-}
-@media screen and (max-width:640px) {
-  footer > .info > .container > h2 > a,
-  footer > .info > .container > p > a {
-    display: block;
-  }
-}
-footer > .info > .container > h2 > .bar,
-footer > .info > .container > p > .bar {
-  margin: 0 10px;
-}
-@media screen and (max-width:640px) {
-  footer > .info > .container > h2 > .bar,
-  footer > .info > .container > p > .bar {
-    display: none;
-  }
-}
-@media screen and (max-width:640px) {
-  footer > .info > .container > p.iam_2 > span {
-    display: block;
-  }
-}
+  /****여기부터 section#portfolio */
+  section#portfolio .pofolCont .slideContWrap{max-width:  640px;}
+  section#portfolio .pofolCont article.pofolSlide{position: relative;}
+  article.pofolSlide ul.slides_pagination{position: absolute; bottom: 30px;}
+  article.pofolSlide ul.slides_pagination{justify-content: center; }
+  article.pofolSlide ul.slides_pagination li{width: 30px;height: 8px; border: 1px solid #ccc; opacity: 0.5; border-radius: 18px;}
+  article.pofolSlide ul.slides_pagination li.on{opacity: 1;}
+  article.pofolSlide ul.slides_pagination li a{text-indent: -9999px;}
 
-aside {
-  display: none;
-  position: fixed;
-  right: 1em;
-  bottom: 1em;
-  z-index: 1000;
+  article.pofolSlide .slides_box figure .frame{float: none; padding-bottom: 10px; width: 100%; height: auto; background: none; box-sizing: border-box;}
+  article.pofolSlide .slides_box figure .frame img{position: initial; width: 63%; height: auto;}
+  article.pofolSlide .slides_box figure figcaption{float: none; display: block; padding: 0 5%; width: 100%; text-align: center; box-sizing: border-box;}
+
+  article.pofolSlide .slides_box figure figcaption .cap_box{padding-bottom: 30px; box-sizing: border-box;}
+  article.pofolSlide .slides_box figure figcaption .cap_box h3 {font-size: 18px;}
+  article.pofolSlide .slides_box figure figcaption .cap_box .desc br,
+  article.pofolSlide .slides_box figure figcaption .cap_box .tools br,
+  article.pofolSlide .slides_box figure figcaption .cap_box .etc br {display: block; }
+  article.pofolSlide .slides_box figure figcaption .cap_box .desc,
+  article.pofolSlide .slides_box figure figcaption .cap_box .tools,
+  article.pofolSlide .slides_box figure figcaption .cap_box .etc {font-size: 14px;}
+  article.pofolSlide .slides_box figure figcaption .cap_box .etc {margin-bottom: 40px;}
+
+  /* gc지놈슬라이드 모바일 */
+  article.pofolSlide .slides_box figure figcaption.gcGenome{width: 100%;}
+  article.pofolSlide .slides_box figure .frame.gcGenome{ width: 100%; height: 280px; background-position: center;  background-size: 130px;}
+  article.pofolSlide .slides_box figure .frame.gcGenome img{position: absolute; left: 50%; top: 16px; width: 122px; margin-left: -61px; height: 244px; border-radius: 9px;}
+
+
+  /*****슬라이드 이전다음 버튼 */
+  article.pofolSlide a.slideBtn { display: block; width: 40px; height: 25px; text-indent: -9999px; }
+
+  article.pofolSlide .thumb_box{display: none;}
+
+  section#portfolio article.project{width: 100%;}
+  section#portfolio article.project ul.Work_list{display: block; margin: 0 auto; width: 100%;}
+  section#portfolio article.project ul.Work_list li{width: 100%; padding-bottom: 10px; box-sizing: border-box;}
+  section#portfolio article.project ul.Work_list li a{height: auto;}
+  section#portfolio article.project ul.Work_list li a img{width: 39%; height: auto;}
+
+
+
+  /****여기부터 section#contact */
+  section#contact { width: 100%; }
+  section#contact .contactCont {width: 100%;}
+  section#contact .contactCont article.fin .finish-talk { width: 90%; height: 200px; margin: 0 auto; padding-bottom: 40px; } 
+  section#contact .contactCont article.fin .finish-talk p { position: initial; margin-top: 10px; margin-bottom: 10px; font-size: 16px;}
+
+
+  /****여기부터 footer */
+  footer {width: 100%;}
+  footer .working p time { display: none; }
+  footer .info .footerBox h2,
+  footer .info .footerBox p { margin-bottom: 10px; }
+  footer .info .footerBox h2 a,
+  footer .info .footerBox p a { display: block; }
 }
-aside > a {
-  display: block;
-  width: 28px;
-  height: 28px;
-  line-height: 28px;
-  text-align: center;
-  background-color: #ffc90e;
-}
-aside > a > i {
-  color: #fff;
-}/*# sourceMappingURL=style.css.map */
