@@ -1,0 +1,248 @@
+@charset "utf-8";
+
+@font-face {
+  font-family: 'HS-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/HS-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'KOTRAHOPE';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/KOTRAHOPE.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+#wrap{width: 100%; margin: auto;  }
+header{position: fixed; width: 100%;top:0; z-index:1000; background-color:#fff; border-bottom: 3px solid rgb(0, 128, 255);; box-shadow: 5px 5px 10px rgba(107, 107, 107, 0.673); ;  }
+header > .container{position: relative; width: 1280px; height: 140px; margin: 0 auto;background-color:#fff;}
+header > .container > h1.logo{position: absolute;left: 0;top: 0; width: 140px; text-indent: -9999px; background: url(./../images/jeju_logo.png) no-repeat center center; background-size: cover;}
+header > .container > h1.logo > a{display: block; height: 140px; text-decoration: none; border: 3px solid rgb(0, 128, 255); border-bottom: none; box-sizing: border-box;}
+header > .container > nav{position: absolute;right: 0;top: 0; width: 1000px; height: 140px; background-image: url(./../images/welcomeJeju.png);background-repeat: no-repeat; background-size: 300px 70px; background-position: 95% 20%;}
+header > .container > nav > ul.gnb{position: absolute;right: 0;top: 70px; display: flex; }
+header > .container > nav > ul.gnb > li{position: relative; margin-left:60px;  }
+header > .container > nav > ul.gnb > li.on > a,
+header > .container > nav > ul.gnb > li:hover > a{display: block; font-weight: 900; color: rgb(0, 128, 255);}
+header > .container > nav > ul.gnb > li:last-child{margin-right: 30px;}
+header > .container > nav > ul.gnb > li > a{font-family: 'HS-Regular'; display: block; height: 70px; line-height: 70px; font-size: 20px; font-weight: 700; text-align: center; text-decoration: none;}
+
+header > .container > nav > ul.gnb > li > a > span.icon{display: inline-block; margin-right:10px; width: 30px; height: 30px; text-indent: -9999px; vertical-align: middle;}
+header > .container > nav > ul.gnb > li > a > span.ico1{background: url(./../images/icon-jeju.png) no-repeat; background-size: contain;}
+header > .container > nav > ul.gnb > li > a > span.ico2{background: url(./../images/icon-trip.png) no-repeat; background-size: contain;}
+header > .container > nav > ul.gnb > li > a > span.ico3{background: url(./../images/icon-food.png) no-repeat; background-size: contain;} 
+header > .container > nav > ul.gnb > li > a > span.ico4{background: url(./../images/icon-hotel.png) no-repeat; background-size: contain;}
+header > .container > nav > ul.gnb > li > a > span.ico5{background: url(./../images/icon-activity.png) no-repeat; background-size: contain;}
+
+
+section{width: 100%; padding:140px 0 140px; }
+section > article {width: 1280px; margin:40px auto 0;}
+section > h2{display: none;}
+
+
+
+/* 1페이지 -페이드슬라이드 */
+section > article.cont1{  /* background-color: skyblue; */ }
+section >  div.visual1{position: relative; width: 100%; overflow: hidden; height: 500px; background-color: #ccc;}
+section >  div.visual1 > ul.slide1{position: absolute;left: 0;top: 0; width: 100%; }
+@keyframes fade{
+  0%{opacity:0.3;}
+  30%{opacity:0.55;}
+  60%{opacity:0.75;}
+  90%{opacity:0.95;}
+  100%{opacity:1;}
+}
+section > div.visual1 > ul.slide1 > li{width: 100%; height: 700px; text-indent: -9999px; background-size: 100% auto; background-repeat: no-repeat; animation: fade 0.5s; transition: all 0.3s ease-in-out;}
+section > div.visual1 > ul.slide1 > li:nth-child(1){background-image: url(./../images/page1-slide1.jpg); background-position: center -220px;}
+section > div.visual1 > ul.slide1 > li:nth-child(2){background-image: url(./../images/page1-slide2.png); background-position: center -330px;}
+section > div.visual1 > ul.slide1 > li:nth-child(3){background-image: url(./../images/page1-slide3.jpg); background-position: center -370px;}
+section > div.visual1 > ul.slide1 > li:nth-child(4){background-image: url(./../images/page1-slide4.jpg); background-position: center -150px;}
+
+section > div.visual1 > ul.pagination{position: absolute; left: 50%; margin-left: -60px; bottom: 10px; display: flex; text-indent: -9999px; }
+section > div.visual1 > ul.pagination > li{width: 10px;margin-right: 20px; border-radius: 50%; background-color: #eee;}
+section > div.visual1 > ul.pagination li.on,
+section > div.visual1 > ul.pagination li:hover{background-color: #000;}
+section > div.visual1 > ul.pagination li > a{display: block; height: 10px;}
+
+/* 1페이지 슬라이드버튼 */
+section > div.visual1 > button.slidebtn{position: absolute; top: 200px; width: 80px; height: 100px; cursor: pointer; text-indent: -9999px; background-image: url(./../images/btn_navigation.png); border: none; background-color: transparent;}
+section > div.visual1 > button.slidebtn.prev{left: 0; background-position: -5px -225px;}
+section > div.visual1 > button.slidebtn.prev:hover{left: 0; background-position: -5px -335px;}
+section > div.visual1 > button.slidebtn.next{right: 0; background-position: -5px -5px;}
+section > div.visual1 > button.slidebtn.next:hover{right: 0; background-position: -5px -115px;}
+
+/* 페이지1 메인컨텐츠 */
+section > article.cont1 > div.mainContainer{display: flex; flex-flow: row nowrap; flex-wrap: wrap; justify-content: space-around; padding: 20px 0 0 ; width: 100%;}
+section > article.cont1 > div.mainContainer > div.txtBox{position:relative; width: 400px;  background-color: #fff; border:1px solid #ddd;  height: 350px; border-radius: 5px;}
+section > article.cont1 > div.mainContainer > div.txtBox > .cont > p.image{ width: 100%; height: 150px; margin-bottom: 10px; text-indent: -9999px; background-size: 100% auto; background-repeat: no-repeat; border: 1px solid rgb(174, 174, 174); border-radius: 5px;}
+section > article.cont1 > div.mainContainer > div.txtBox > .cont > p.image.image1{background-image: url(./../images/page1-1.jpg); background-position: center -35px;}
+section > article.cont1 > div.mainContainer > div.txtBox > .cont > p.image.image2{background-image: url(./../images/page1-2.png); background-position: center -20px;}
+section > article.cont1 > div.mainContainer > div.txtBox > .cont > p.image.image3{background-image: url(./../images/page1-3.png); background-position: center -25px;}
+section > article.cont1 > div.mainContainer > div.txtBox > .cont{position:absolute; margin:auto 0; height:200px; padding:0 10px; }
+section > article.cont1 > div.mainContainer > div.txtBox > .cont > h3{font-family: 'KOTRAHOPE'; font-size: 22px; letter-spacing: 1px; color: rgb(88, 88, 88); padding: 20px 0 10px; }
+section > article.cont1 > div.mainContainer > div.txtBox > .cont > p.text{  font-size: 13px; color: #9a9a9a; text-align: left; line-height:24px; letter-spacing: -0.5px;}
+
+
+
+/* 2페이지 -기본형(썸네일클릭)슬라이드 */
+section > article.cont2{ /* background-color: rgb(210, 163, 250);  */}
+section > article.cont2 > div.visual2{position: relative; overflow: hidden; width: 1280px; }
+section > article.cont2 > div.visual2 > .slideContainer {position:relative; display: flex; left: 0;  transition: all 0.4s ease-in-out;}
+section > article.cont2 > div.visual2 > .slideContainer > p{min-width: 100%;text-indent: -9999px; background-size: cover; background-repeat: no-repeat;}
+section > article.cont2 > div.visual2 > .slideContainer > p:nth-child(1){background-image: url(./../images/page2-1.png); background-position: -10px -200px;}
+section > article.cont2 > div.visual2 > .slideContainer > p:nth-child(2){background-image: url(./../images/page2-2.png); background-position: center -340px;}
+section > article.cont2 > div.visual2 > .slideContainer > p:nth-child(3){background-image: url(./../images/page2-3.png); background-position: center -200px;}
+section > article.cont2 > div.visual2 > .slideContainer > p:nth-child(4){background-image: url(./../images/page2-4.jpg); background-position: center -150px;}
+section > article.cont2 > div.visual2 > .slideContainer > p:nth-child(5){background-image: url(./../images/page2-5-1.jpg); background-position: center -40px;}
+section > article.cont2 > div.visual2 > .slideContainer > p:nth-child(6){background-image: url(./../images/page2-6.png); background-position: center -100px;}
+section > article.cont2 > div.visual2 > .slideContainer > p:nth-child(7){background-image: url(./../images/page2-7.jpg); background-position: center -150px;}
+section > article.cont2 > div.visual2 > .slideContainer > p:nth-child(8){background-image: url(./../images/page2-8.jpg); background-position: center center;}
+section > article.cont2 > div.visual2 > .slideContainer > p:nth-child(9){background-image: url(./../images/page2-9.jpg); background-position: center -340px;}
+section > article.cont2 > div.visual2 > .slideContainer > p:nth-child(10){background-image: url(./../images/page2-10.jpg); background-position: center -150px;}
+section > article.cont2 > div.visual2 > .slideContainer > p > a{display: block;height: 400px; }
+section > article.cont2 > div.visual2 > .slideContainer > p > a span{opacity:0 }
+
+/* 2페이지 썸네일 */
+section > article.cont2 > div.visual2 > ul.thumb{display: flex;  width: 100%; border:1px solid #ddd; border-top:0; padding:20px 20px; box-sizing: border-box; justify-content: space-between;}
+section > article.cont2 > div.visual2 > ul.thumb > li{width: 100px; height: 100px; text-indent: -9999px; border-right: 1px solid #fff; box-sizing: border-box; background-repeat: no-repeat;}
+section > article.cont2 > div.visual2 > ul.thumb > li:nth-child(1){background:url(./../images/page2-1.png) center center;background-size: 100px 100px; }
+section > article.cont2 > div.visual2 > ul.thumb > li:nth-child(2){background:url(./../images/page2-2.png) center center;background-size: 100px 100px; }
+section > article.cont2 > div.visual2 > ul.thumb > li:nth-child(3){background:url(./../images/page2-3.png) center center;background-size: 100px 100px; }
+section > article.cont2 > div.visual2 > ul.thumb > li:nth-child(4){background:url(./../images/page2-4.jpg) center center;background-size: 100px 100px; }
+section > article.cont2 > div.visual2 > ul.thumb > li:nth-child(5){background:url(./../images/page2-5-1.jpg) center center;background-size: 100px 100px; }
+section > article.cont2 > div.visual2 > ul.thumb > li:nth-child(6){background:url(./../images/page2-6.png) center center;background-size: 100px 100px; }
+section > article.cont2 > div.visual2 > ul.thumb > li:nth-child(7){background:url(./../images/page2-7.jpg) center center;background-size: 100px 100px; }
+section > article.cont2 > div.visual2 > ul.thumb > li:nth-child(8){background:url(./../images/page2-8.jpg) center center;background-size: 100px 100px; }
+section > article.cont2 > div.visual2 > ul.thumb > li:nth-child(9){background:url(./../images/page2-9.jpg) center center;background-size: 100px 100px; }
+section > article.cont2 > div.visual2 > ul.thumb > li:nth-child(10){border-right: none; background:url(./../images/page2-10.jpg) center center;background-size: 100px 100px; }
+section > article.cont2 > div.visual2 > ul.thumb > li > a{display: block;height: 94px;}
+section > article.cont2 > div.visual2 > ul.thumb > li:hover{background-size: 110px 110px; transition: all 0.4s ease-in-out;}
+section > article.cont2 > div.visual2 > ul.thumb > li.on > a{border:5px solid orange; transition: all 0.2s ease-in-out;}
+
+/* 페이지2 메인컨텐츠1 */
+section > article > div.cardItems{display: flex; flex-flow: wrap; justify-content:left; width: 100%; padding:20px 0 0;  }
+section > article > div.cardItems > div.txtBox  {width: 308px; padding:10px;   margin:15px 0 0 15px; overflow: hidden; height: 360px; background-color: #fff;border:1px solid #ddd; box-sizing: border-box; border-radius: 5px;}
+section > article > div.cardItems > div.txtBox:nth-child(4n+1)  {margin-left:0; }
+section > article > div.cardItems > div.txtBox:nth-child(-n+4)  {margin-top:0; }
+section > article > div.cardItems > div.txtBox > h3{font-family: 'KOTRAHOPE'; font-size: 22px; letter-spacing: 1px; color: rgb(88, 88, 88); padding: 5px;}
+section > article > div.cardItems > div.txtBox > p.image{ width: 100%; height: 120px; text-indent: -9999px; background-size: 100% auto; border: 1px solid rgb(174, 174, 174); border-radius: 5px;}
+section > article > div.cardItems > div.txtBox > p.image.image1{background-image: url(./../images/page2-1.png); background-position: center -20px;}
+section > article > div.cardItems > div.txtBox > p.image.image2{background-image: url(./../images/page2-2.png); background-position: center -70px;}
+section > article > div.cardItems > div.txtBox > p.image.image3{background-image: url(./../images/page2-3.png); background-position: center -10px;}
+section > article > div.cardItems > div.txtBox > p.image.image4{background-image: url(./../images/page2-4.jpg); background-position: center -10px;}
+section > article > div.cardItems > div.txtBox > p.image.image5{background-image: url(./../images/page2-5-2.jpg); background-position: center -10px;}
+section > article > div.cardItems > div.txtBox > p.image.image6{background-image: url(./../images/page2-6.png); background-position: center -10px;}
+section > article > div.cardItems > div.txtBox > p.image.image7{background-image: url(./../images/page2-7.jpg); background-position: center -10px;}
+section > article > div.cardItems > div.txtBox > p.image.image8{background-image: url(./../images/page2-8.jpg); background-position: center -10px;}
+section > article > div.cardItems > div.txtBox > p.image.image9{background-image: url(./../images/page2-9.jpg); background-position: center -10px;}
+section > article > div.cardItems > div.txtBox > p.image.image10{background-image: url(./../images/page2-10.jpg); background-position: center -10px;}
+section > article > div.cardItems > div.txtBox > p.text{padding:10px 0 0; font-size: 13px; letter-spacing: -0.5px; color: #9a9a9a; text-align: left; line-height:24px;  }
+
+
+
+/* 3페이지 -자동재생슬라이드 */
+section > article.cont3{  /* background-color: rgb(154, 234, 120); */ }
+section > div.visual3{position: relative; width: 100%; overflow: hidden; margin-top:40px; }
+section > div.visual3 > div.slide3{position: relative; display: flex; left:0; transition: all 0.4s ease-in-out; }
+section > div.visual3 > div.slide3 > p{min-width: 100%; text-indent: -9999px;  background-size: cover; background-repeat: no-repeat;}
+section > div.visual3 > div.slide3 > p:nth-child(1){background-image: url(./../images/page3-1.jpg);background-position: center -400px;}
+section > div.visual3 > div.slide3 > p:nth-child(2){background-image: url(./../images/page3-2.jpg);background-position: center -150px;}
+section > div.visual3 > div.slide3 > p:nth-child(3){background-image: url(./../images/page3-3.jpg);background-position: center -350px;}
+section > div.visual3 > div.slide3 > p:nth-child(4){background-image: url(./../images/page3-4.jpg);background-position: center -380px;}
+section > div.visual3 > div.slide3 > p:nth-child(5){background-image: url(./../images/page3-5.jpg);background-position: center -80px;}
+section > div.visual3 > div.slide3 > p > a{display: block;height: 600px;}
+
+section > div.visual3 > ul.pagination{position: absolute; left: 50%; margin-left: -60px; bottom: 10px; display: flex; text-indent: -9999px; }
+section > div.visual3 > ul.pagination > li{width: 10px;margin-right: 20px; border-radius: 50%; background-color: #eee;}
+section > div.visual3 > ul.pagination li.on,
+section > div.visual3 > ul.pagination li:hover{background-color: #000;}
+section > div.visual3 > ul.pagination li > a{display: block; height: 10px;}
+/* 3페이지 슬라이드버튼 */
+section > div.visual3 > button.slidebtn{position: absolute; top: 250px; width: 80px; height: 100px; cursor: pointer; text-indent: -9999px; background-image: url(./../images/btn_navigation.png); border: none; background-color: transparent;}
+section > div.visual3 > button.slidebtn.prev3{left: 0; background-position: -5px -225px;}
+section > div.visual3 > button.slidebtn.prev3:hover{left: 0; background-position: -5px -335px;}
+section > div.visual3 > button.slidebtn.next3{right: 0; background-position: -5px -5px;}
+section > div.visual3 > button.slidebtn.next3:hover{right: 0; background-position: -5px -115px;}
+section > div.visual3 > button.playbtn{position: absolute; bottom: 20px; cursor: pointer; width: 20px; height: 20px; text-indent: -9999px; border: none; background: url(./../images/icons.png) no-repeat;}
+section > div.visual3 > button.playbtn.play{right: 40px; background-position: -67px -58px;}
+section > div.visual3 > button.playbtn.stop{right: 20px; background-position: -47px -58px;}
+/* 메인컨텐츠 이미지 */
+section > article.cont3 > div.cardItems > div.txtBox > p.image.image1{background-image: url(./../images/page3-1-2.jpg); background-position: center -5px;}
+section > article.cont3 > div.cardItems > div.txtBox > p.image.image2{background-image: url(./../images/page3-2-2.jpg); background-position: center -50px;}
+section > article.cont3 > div.cardItems > div.txtBox > p.image.image3{background-image: url(./../images/page3-3-2.jpg); background-position: center -10px;}
+section > article.cont3 > div.cardItems > div.txtBox > p.image.image4{background-image: url(./../images/page3-4-2.jpg); background-position: center -80px;}
+section > article.cont3 > div.cardItems > div.txtBox > p.image.image5{background-image: url(./../images/page3-5-2.jpg); background-position: center -40px;}
+
+section > article.cont3 > div.mainContainer > div.txtBox{height: 370px;}
+section > article.cont3 > div.mainContainer > div.txtBox span.address {display:block; height:30px; font-size:12px; color:rgb(1, 101, 201);  }
+
+
+
+
+/* 4페이지 -원버튼슬라이드 */
+section > article.cont4{ /* background-color: rgb(248, 207, 124); */ }
+section > article.cont4 > div.visual4{position: relative; width: 100%; overflow: hidden; height: 400px; background-color: #ccc;}
+section > article.cont4 > div.visual4 > div.slide4{position: relative; display: flex; left:0;  transition: all 0.4s ease-in-out; }
+section > article.cont4 > div.visual4 > div.slide4 > p{min-width: 1280px; text-indent: -9999px; background-size: cover; background-repeat: no-repeat;}
+section > article.cont4 > div.visual4 > div.slide4 > p:nth-child(1){background-image: url(./../images/page4-1.jpg); background-position: center -100px;}
+section > article.cont4 > div.visual4 > div.slide4 > p:nth-child(2){background-image: url(./../images/page4-2.png); background-position: center -350px;}
+section > article.cont4 > div.visual4 > div.slide4 > p:nth-child(3){background-image: url(./../images/page4-3.png); background-position: center -150px;}
+section > article.cont4 > div.visual4 > div.slide4 > p:nth-child(4){background-image: url(./../images/page4-4.jpg); background-position: center -150px;}
+section > article.cont4 > div.visual4 > div.slide4 > p > a{display: block; height: 500px;}
+
+section > article.cont4 > div.visual4 > ul.pagination{position: absolute; left: 50%; margin-left: -60px; bottom: 10px; display: flex; text-indent: -9999px; }
+section > article.cont4 > div.visual4 > ul.pagination > li{width: 10px;margin-right: 20px; border-radius: 50%; background-color: #eee;}
+section > article.cont4 > div.visual4 > ul.pagination li.on,
+section > article.cont4 > div.visual4 > ul.pagination li:hover{background-color: #000;}
+section > article.cont4 > div.visual4 > ul.pagination li > a{display: block; height: 10px;}
+/* 4페이지 슬라이드버튼 */
+section > article.cont4 > div.visual4 > button.onebtn{position: absolute;right: 30px; top: 30px; width: 21px; height: 21px; cursor: pointer; text-indent: -9999px; background-image: url(./../images/icons.png); background-position: 0 -57px; border: none; background-color: transparent;}
+section > article.cont4 > div.visual4 > button.onebtn.pause{  background-position: -62px -24px;}
+
+section > article.cont4 > div.cardItems > div.txtBox{height: 360px;}
+/* 메인컨텐츠 이미지 */
+section > article.cont4 > div.cardItems > div.txtBox > p.image.image1{background-image: url(./../images/page4-1.jpg); background-position: center -20px;}
+section > article.cont4 > div.cardItems > div.txtBox > p.image.image2{background-image: url(./../images/page4-2.png); background-position: center -70px;}
+section > article.cont4 > div.cardItems > div.txtBox > p.image.image3{background-image: url(./../images/page4-3.png); background-position: center -10px;}
+section > article.cont4 > div.cardItems > div.txtBox > p.image.image4{background-image: url(./../images/page4-4.jpg); background-position: center -10px;}
+
+
+
+
+/* 5페이지 -이전다음슬라이드 */
+section > article.cont5{ /*  background-color: rgb(248, 124, 124); */ }
+section > article.cont5 > div.visual5{position: relative; width: 100%; overflow: hidden;  background-color: #ccc;}
+section > article.cont5 > div.visual5 > div.slide5{position: relative; display: flex; flex-wrap: nowrap; left:0; transition: all 0.3s ease-in-out;}
+section > article.cont5 > div.visual5 > div.slide5 > p{min-width: 1280px;height: 500px; text-indent: -9999px;  background-size: cover; background-repeat: no-repeat;}
+section > article.cont5 > div.visual5 > div.slide5 > p:nth-child(1){background-image: url(./../images/page5-1.jpg); background-position: center -100px;}
+section > article.cont5 > div.visual5 > div.slide5 > p:nth-child(2){background-image: url(./../images/page5-2.png); background-position: center -300px;}
+section > article.cont5 > div.visual5 > div.slide5 > p:nth-child(3){background-image: url(./../images/page5-3.jpg); background-position: center -150px;}
+section > article.cont5 > div.visual5 > div.slide5 > p:nth-child(4){background-image: url(./../images/page5-4.jpg); background-position: center -200px;}
+
+section > article.cont5 > div.visual5 > ul.pagination{position: absolute; left: 50%; margin-left: -60px; bottom: 10px; display: flex; text-indent: -9999px; }
+section > article.cont5 > div.visual5 > ul.pagination > li{width: 10px;margin-right: 20px; border-radius: 50%; background-color: #eee;}
+section > article.cont5 > div.visual5 > ul.pagination li.on,
+section > article.cont5 > div.visual5 > ul.pagination li:hover{background-color: #000;}
+section > article.cont5 > div.visual5 > ul.pagination li > a{display: block; height: 10px;}
+/* 5페이지 슬라이드버튼 */
+section > article.cont5 > div.visual5 > button.slidebtn{position: absolute; top: 200px; width: 80px; height: 100px; cursor: pointer; text-indent: -9999px; background-image: url(./../images/btn_navigation.png); border: none; background-color: transparent;}
+section > article.cont5 > div.visual5 > button.slidebtn.prev5{left: 0; background-position: -5px -225px;}
+section > article.cont5 > div.visual5 > button.slidebtn.prev5:hover{left: 0; background-position: -5px -335px;}
+section > article.cont5 > div.visual5 > button.slidebtn.next5{right: 0; background-position: -5px -5px;}
+section > article.cont5 > div.visual5 > button.slidebtn.next5:hover{right: 0; background-position: -5px -115px;}
+
+section > article.cont5 > div.cardItems > div.txtBox{height: 380px;}
+/* 메인컨텐츠 이미지 */
+section > article.cont5 > div.cardItems > div.txtBox > p.image.image1{background-image: url(./../images/page5-1.jpg); background-position: center -20px;}
+section > article.cont5 > div.cardItems > div.txtBox > p.image.image2{background-image: url(./../images/page5-2.png); background-position: center -70px;}
+section > article.cont5 > div.cardItems > div.txtBox > p.image.image3{background-image: url(./../images/page5-3.jpg); background-position: center -10px;}
+section > article.cont5 > div.cardItems > div.txtBox > p.image.image4{background-image: url(./../images/page5-4.jpg); background-position: center -10px;}
+
+
+
+footer{padding-top: 20px; height: 90px; font-size: 15px; color: #000; text-align: center; background-color: #ccc;}
+
+aside{position: fixed; width: 25px; right: 25px; bottom: 25px;}
+aside > a.top{display: block; height: 25px; line-height: 25px; text-align: center; background-color: rgb(41, 60, 168);}
+aside > a.top:hover{background-color: rgb(92, 94, 212); text-decoration: none;}
+aside > a.top > i{color: #fff;}

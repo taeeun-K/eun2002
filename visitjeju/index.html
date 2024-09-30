@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Visit Jeju</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+  />  
+
+  <script defer src="./js/function.js"></script>  
+  <script src="./js/jquery-1.12.4.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+</head>
+<body>
+  <div id="wrap">
+    <header>
+      <div class="head-container">
+        <h1 class="logo"><a href="#"></a></h1>
+
+        <div class="lnb_bg"></div>
+        <nav>
+          <ul class="gnb">
+            <li class="gnb-title">
+              <a href="#">여행지</a>
+              <div class="sub-mnu-container">
+                <ol class="lnb lnb_1">
+                  <li><a href="#"><span>관광지</span></a></li>
+                  <li><a href="#"><span>음식</span></a></li>
+                  <li><a href="#"><span>숙박</span></a></li>
+                  <li><a href="#"><span>쇼핑</span></a></li>
+                  <li><a href="#"><span>축제와 행사</span></a></li>
+                </ol>
+              </div>
+            </li>
+            <li class="gnb-title">
+              <a href="#">추천</a>
+              <div class="sub-mnu-container">
+                <ol class="lnb lnb_2">
+                  <li><a href="#"><span>테마지도</span></a></li>
+                  <li><a href="#"><span>테마여행</span></a></li>
+                  <li><a href="#"><span>일정 추천</span></a></li>
+                  <li><a href="#"><span>여행 큐레이션</span></a></li>
+                  <li><a href="#"><span>슬로우로드</span></a></li>
+                  <li><a href="#"><span>광광지혼잡도</span></a></li>
+                  <li><a href="#"><span>제주문화공연</span></a></li>
+                  <li><a href="#"><span>관광기념품</span></a></li>
+                </ol>
+              </div>
+            </li>
+            <li class="gnb-title">
+              <a href="#">쇼핑</a>
+              <div class="sub-mnu-container">
+                <ol class="lnb lnb_3">
+                  <li><a href="#"><span>면세점</span></a></li>
+                  <li><a href="#"><span>탐나오</span></a></li>
+                  <li><a href="#"><span>이제주몰</span></a></li>
+                  <li><a href="#"><span>Deals</span></a></li>
+                </ol>
+              </div>
+            </li>
+            <li class="gnb-title">
+              <a href="#">브랜드</a>
+              <div class="sub-mnu-container">
+                <ol class="lnb lnb_4">
+                  <li><a href="#"><span>유네스코</span></a></li>
+                  <li><a href="#"><span>카름스테이</span></a></li>
+                  <li><a href="#"><span>웰니스</span></a></li>
+                  <li><a href="#"><span>같이가치</span></a></li>
+                  <li><a href="#"><span>우수관광사업체</span></a></li>
+                  <li><a href="#"><span>착한가격업소</span></a></li>
+                  <li><a href="#"><span>지오브랜드</span></a></li>
+                </ol>
+              </div>
+            </li>
+            <li class="gnb-title">
+              <a href="#">여행정보</a>
+              <div class="sub-mnu-container">
+                <ol class="lnb lnb_5">
+                  <li><a href="#"><span>문화·역사·예술</span></a></li>
+                  <li><a href="#"><span>영상 속 제주</span></a></li>
+                  <li><a href="#"><span>VR로 보는 제주</span></a></li>
+                  <li><a href="#"><span>안전안심가이드</span></a></li>
+                  <li><a href="#"><span>교통</span></a></li>
+                  <li><a href="#"><span>의료기관</span></a></li>
+                  <li><a href="#"><span>안내책자/관광지도</span></a></li>
+                  <li><a href="#"><span>공지사항</span></a></li>
+                  <li><a href="#"><span>관광정보센터</span></a></li>
+                </ol>
+              </div>
+            </li>
+            <li class="gnb-title">
+              <a href="#">나의여행</a>
+              <div class="sub-mnu-container">
+                <ol class="lnb lnb_6">
+                  <li><a href="#"><span>나의여행일정</span></a></li>
+                  <li><a href="#"><span>찜한여행</span></a></li>
+                  <li><a href="#"><span>나의리뷰</span></a></li>
+                  <li><a href="#"><span>방문여행지</span></a></li>
+                  <li><a href="#"><span>관광문의</span></a></li>
+                  <li><a href="#"><span>틀린정보신고</span></a></li>
+                  <li><a href="#"><span>정보수정</span></a></li>
+                </ol>
+              </div>
+            </li>
+          </ul>
+        </nav>
+        
+        <div class="login-container">
+          <a href="#">로그인</a>
+          <div class="lang">
+            <a href="#" class="korean">한국어</a>
+            <ul>
+              <li><a href="#">English</a></li>
+              <li><a href="#">中文(简体)</a></li>
+              <li><a href="#">中文(繁体)</a></li>
+              <li><a href="#">日本語</a></li>
+              <li><a href="#">Melayu</a></li>
+            </ul>
+          </div>
+          <button class="search"></button>
+        </div>        
+      </div>
+    </header>
+
+    <section>
+      <div class="side-navigation">
+        <ul class="side">
+          <li class="kakao">
+            <a href="#">
+              <span>여행상담</span>
+            </a>
+          </li>
+          <li class="center-tel">
+            <a href="#">
+              <span class="tel">064) <b>740-6000</b></span>
+              <span class="text">제주관광<br />정보센터</span>
+            </a>
+          </li>
+          <li class="personal-info">
+            <a href="#">
+              <span>맞춤정보</span>
+            </a>
+          </li>
+          <button class="page-up"></button>
+          <!-- <li class="page-up">
+            <a href="#">...</a>
+          </li> -->
+        </ul>
+      </div>
+      <h2>비짓제주 제주관광 추천</h2>
+      <div class="main-container">
+        <div class="visual">
+          
+          <div class="swiper" id="mainVisual">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide slide_1">
+                <p class="textbox">
+                  2022년 가을 놓치지 말아야 할 제주 관광 10선 <span>걷고 싶은 계절, 제주의 가을을 탐하다</span>
+                </p>
+                <a href="#">자세히</a>
+              </div>
+              <div class="swiper-slide slide_2">
+                <p class="textbox">
+                  제주관광공사 × 호텔신라가 함께하는, <span>안심채움×맛있는 제주만들기</span>
+                </p>
+                <a href="#">자세히</a>
+              </div>
+              <div class="swiper-slide slide_3">
+                <p class="textbox">
+                  휴식과 힐링이 필요하다면! <span>&lt; 제주 웰니스 힐링 프로그램 기획전 &gt;</span>
+                </p>
+                <a href="#">자세히</a>
+              </div>
+            </div>
+          
+            <div class="swiper-button-container">
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>              
+            </div>
+            <!-- If we need navigation buttons -->
+
+          </div>
+
+          <div class="control-box">
+            <button class="ctrlbtn stop">정지</button>
+            <button class="ctrlbtn play on">재생</button>
+          </div>
+        </div>
+      </div>
+
+      <article class="cont1">
+        <div class="main-wrap">
+          <div class="main-slide">
+            <ul>
+              <li>
+                <a href="#">
+                  <p>리얼제주를 만나다! <span>어촌탐방-해녀</span></p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <p>리얼제주를 만나다. <span>&lt;제주힐링여행지&gt;</span></p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <p>휴식과 힐링이 필요하다면! <span>&lt;제주 웰니스 힐링 프로그램&gt;</span></p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <p>알고 보면 어렵지 않은 Vegan <span>&lt;Begin 제주 비건 여행&gt;</span></p>
+                </a>
+              </li>
+            </ul>
+            <div class="list">
+              <div class="subject">
+                <a href="#" class="notice-tit">공지</a>
+                <a href="#" class="notice-cont">뷰(View)티풀제주 이벤트! 당첨자 발표!</a>
+              </div>
+              <div class="date">
+                <p>2022.08.26</p>
+              </div>
+            </div>            
+          </div>
+          <div class="tag-swiper">
+            <div class="swiper" id="clickSwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide swiper_1"><a href="#">제주안전여행스템프</a></div>
+                <div class="swiper-slide swiper_2"><a href="#">제주에서만나요 카름에서머물러요</a></div>
+                <div class="swiper-slide swiper_3"><a href="#">탐나오가 드리는 혜택</a></div>
+                <div class="swiper-slide swiper_4"><a href="#">웰컴디지털스튜디오</a></div>
+                <div class="swiper-slide swiper_5"><a href="#">관광지혼잡도분석</a></div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+
+            <ul class="tag">
+              <li><a href="#">#테마여행</a></li>
+              <li><a href="#">#웰니스</a></li>
+              <li><a href="#">#지도우편신청</a></li>
+              <li><a href="#">#UNESCO</a></li>
+              <li><a href="#">#실시간 관광지 혼잡도</a></li>
+              <li><a href="#">#슬로우로드</a></li>
+              <li><a href="#">#안전여행스탬프in제주</a></li>
+              <li><a href="#">#여행일정</a></li>
+              <li><a href="#">#안내책자</a></li>
+              <li><a href="#">#테마지도</a></li>
+              <li><a href="#">#포토제주</a></li>
+              <li><a href="#">#블로그</a></li>
+              <li><a href="#">#제주여행공유</a></li>
+            </ul>
+          </div>
+
+          <div class="video-jeju-wrap">
+            <div class="video-title">
+              <h3>영상으로 만나는 제주</h3>
+              <a href="#">Show all</a>
+            </div>
+            <ul class="video-list">
+              <li>
+                <a href="#">
+                  <img src="./image/video-local.jpg" alt="제주로컬체험">
+                  <span>[리얼제주] 오감만족 제주 로컬 체험</span>
+                </a>
+                <button class="local">재생</button>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./image/video-noodle.jpg" alt="국수마당">
+                  <span>[제주 향토음식을 찾아 떠나는 맛순례] 국수마당</span>
+                </a>
+                <button class="noodle">재생</button>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./image/video-stone.jpg" alt="돌문화체험">
+                  <span>[리얼제주] 돌문화 체험 여행</span>
+                </a>
+                <button class="stone">재생</button>
+              </li>
+            </ul>
+          </div>
+
+          <div class="instagram-visitjeju-wrap">
+            <div class="insta-title">
+              <h3>@visitjeju.kr</h3>
+              <a href="#">Show all</a>
+            </div>
+
+            <ul class="thumbnail-list">
+              <li><a href="#">서건도</a></li>
+              <li><a href="#">한남시험림</a></li>
+              <li><a href="#">김정문알로에제주식물원</a></li>
+              <li><a href="#">제주루나폴</a></li>
+              <li><a href="#">가을제주</a></li>
+              <li><a href="#">서우봉해바라기</a></li>
+              <li><a href="#">약천사</a></li>
+              <li><a href="#">사라오름산정호수</a></li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="cont2">
+        <div class="shopping-container">
+          <div class="shopping-category">
+            <ul>
+              <li class="dutyfree-list on">
+                <a href="#">
+                  <span class="list-title dutyfree-title">관광객 누구나 면세쇼핑!</span>
+                  <span class="btn-icon dutyfree">제주관광공사 인터넷면세점</span>
+                </a>
+              </li>
+              <li class="platform-list">
+                <a href="#">
+                  <span class="list-title platform-title">제주여행 공공 플랫폼</span>
+                  <span class="btn-icon tamnao">탐나오</span>
+                </a>
+              </li>
+              <li class="food-list">
+                <a href="#">
+                  <span class="list-title food-title">제주 대표 농수축가공품을 한번에</span>
+                  <span class="btn-icon ejejumall">이제주몰</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="list-container-wrap">
+            <div class="dutyfree-thumbs"></div>
+            <div class="platform-thumbs">
+              <ol>
+                <li>
+                  <a href="#">
+                    <img src="./image/platform01.jpg" alt="제주시티투어">
+                    <span class="list-title">제주시티투어(1회·1일 이용권)</span>
+                    <span class="list-explain">당일 티켓 한 장으로 자유롭게 환승</span>
+                    <span class="list-price"><b>2,000</b>원~</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="./image/platform02.jpg" alt="돌고래에코투어">
+                    <span class="list-title">M1971요트투어 돌고래 에코투어</span>
+                    <span class="list-explain">하이제주모바일할인쿠폰</span>
+                    <span class="list-price"><b>38,000</b>원~</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="./image/platform03.jpg" alt="도라미펜션">
+                    <span class="list-title">도라미펜션</span>
+                    <span class="list-explain">서귀포 남부중심지 위치,관광지 이동편리</span>
+                    <span class="list-price"><b>159,000</b>원~</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="./image/platform04.jpg" alt="제주시티호텔">
+                    <span class="list-title">라마다제주시티호텔</span>
+                    <span class="list-explain">★안심방역100★공항근처 가성비최고!</span>
+                    <span class="list-price"><b>111,800</b>원~</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="./image/platform05.png" alt="노형슈퍼마켙">
+                    <span class="list-title">노형수퍼마켙</span>
+                    <span class="list-explain">
+                      노형수퍼마켙 일상과 비일상의 경계 포가든도어 너머, 미지의 공간으로 떠나는 시작점
+                    </span>
+                    <span class="list-price"><b>10,000</b>원~</span>
+                  </a>
+                </li>
+              </ol>
+            </div>
+
+            <div class="food-thumbs">
+              <ol>
+                <li>
+                  <a href="#">
+                    <img src="./image/food01.jpg" alt="마유3종세트">
+                    <span class="list-explain">[유앤아이] 데일리시 마유 프레시 세트(3종)</span>
+                    <span class="list-price"><b>69,900</b>원</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="./image/food02.jpg" alt="갈치세트">
+                    <span class="list-explain">
+                      [제주어멍] 中 갈치세트 골라담기 中 갈치세트 1호(230g*4팩)
+                    </span>
+                    <span class="list-price"><b>35,900</b>원</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="./image/food03.jpg" alt="김부각선물세트">
+                    <span class="list-explain">
+                      [모음전] 바삭 가득 김부각&과즐 골라담기 제주담은 김부각 선물세트
+                    </span>
+                    <span class="list-price"><b>14,900</b>원</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="./image/food04.jpg" alt="흑돈선물세트">
+                    <span class="list-explain">
+                      몬트락 제주 냉장 흑백돼지 선물세트 골라담기 몬트락)흑돈선물세트(흑오겹300g*2개+흑목심300*1개+흑돼지찌개용500g*1개)
+                    </span>
+                    <span class="list-price"><b>49,900</b>원</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="./image/food05.jpg" alt="한라봉벌크">
+                    <span class="list-explain">
+                      할망네 농장 한라봉 가정용 3kg~ 한라봉 3kg 가정용 벌크
+                    </span>
+                    <span class="list-price"><b>17,900</b>원</span>
+                  </a>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="cont3">
+        <div class="main-tit">
+          <h3>개인화 추천 콘텐츠</h3>
+          <p>방문자의 성향과 빅데이터분석을 통해 콘텐츠를 추천해드립니다</p>
+        </div>
+        <div class="travel-contents">
+          <ul>
+            <li class="contents-theme hot-search">
+              <div class="theme-subject">
+                <p>
+                  <span>Today’s Top Keyword</span>
+                  오늘의 제주관광 <br /> 인기검색어
+                  <strong>코스모스</strong>
+                </p>
+                <button type="button">더보기</button>
+              </div>
+              <span class="triangle1">삼각형</span>
+            </li>
+            
+            <li>
+              <a href="#">
+                <img src="./image/travel-snap.jpg" alt="커플스냅 스팟">
+                <span class="thumb-tit">셀프웨딩에 버금가는 &lt;커플스냅 스팟&gt;</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./image/travel-flower.png" alt="가을꽃여행">
+                <span class="thumb-tit">알록달록 감성 가득 &lt;가을 꽃 찾아가는 제주 여행길&gt;</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./image/travel-seoubong.jpg" alt="서우봉">
+                <span class="thumb-tit">서우봉</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./image/travel-hanla.jpg" alt="한라산국립공원">
+                <span class="thumb-tit">한라산국립공원</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./image/travel-hyupjae.jpg" alt="협재해수욕장">
+                <span class="thumb-tit">협재해수욕장</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./image/travel_camellia.jpg" alt="카멜리아힐">
+                <span class="thumb-tit">카멜리아힐</span>
+              </a>
+            </li>
+            <li class="contents-theme what-finding">
+              <div class="theme-subject">
+                <p>
+                  <span>Personalized Recommendation</span>
+                  이러한 콘텐츠를 <br />
+                  찾으시나요?
+                </p>
+              </div>
+              <span class="triangle2">삼각형</span>
+            </li>
+            <li class="contents-theme hot-spot">
+              <div class="theme-subject">
+                <p>
+                  <span>New Hot Spots</span>
+                  새로운 제주를 <br /> 알아가는 즐거움
+                </p>
+              </div>
+              <span class="triangle3">삼각형</span>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./image/travel-light.jpg" alt="빛의벙커">
+                <span class="thumb-tit">빛의 벙커</span>
+                
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./image/travel-hills.jpg" alt="서귀포힐즈호텔">
+                <span class="thumb-tit">서귀포힐즈호텔</span>
+
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./image/travel-baum.jpg" alt="바움하우스">
+                <span class="thumb-tit">바움하우스</span>
+
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./image/travel-pyosun.jpg" alt="표선해수욕장">
+                <span class="thumb-tit">표선해수욕장</span>
+
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./image/travel-pension.jpg" alt="가원비치펜션">
+                <span class="thumb-tit">가원비치펜션</span>
+
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./image/travel-food.jpg" alt="탐라뚝배기">
+                <span class="thumb-tit">탐라 뚝배기</span>
+
+              </a>
+            </li>
+            <li class="contents-theme big-data">
+              <div class="theme-subject">
+                <p>
+                  <span>Big Data Recommendation</span>
+                  <i>빅데이터로 분석한</i>
+                  <strong>협재해수욕장</strong>
+                  <i>주변여행지 추천</i>
+                </p>
+              </div>
+              <span class="triangle4">삼각형</span>
+            </li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="cont4">
+        <div class="main-tit">
+          <h3>제주 축제와 행사</h3>
+          <p>진행 중인 축제와 예정된 축제를 한눈에</p>
+        </div>
+        <div class="fastival-list-container">
+          <ul class="list-slide">
+            <li>
+              <a href="#">
+                <img src="./image/fastival01.jpg" alt="마노르블랑">
+                <span class="fastival-title">마노르블랑 핑크뮬리축제</span>
+                <span class="fastival-date">2022.09.13 ~ 2022.11.30</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./image/fastival02.jpg" alt="제주잇쇼">
+                <span class="fastival-title">2022 제주잇쇼(EAT쇼)</span>
+              <span class="fastival-date">2022.10.01 ~ 2022.10.02</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./image/fastival03.jpg" alt="휴애리">
+                <span class="fastival-title">휴애리 핑크뮬리축제</span>
+                <span class="fastival-date">2022.09.15 ~ 2022.11.15</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./image/fastival04.jpg" alt="탐라문화제">
+                <span class="fastival-title">제61회 탐라문화제</span>
+                <span class="fastival-date">2022.10.06 ~ 2022.10.10</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./image/fastival05.jpg" alt="제주환경수호대 캠프">
+                <span class="fastival-title">2022 숲으로오라-제주환경수호대 캠프</span>
+                <span class="fastival-date">2022.10.01 ~ 2022.10.03</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./image/fastival06.jpg" alt="제주올레걷기축제">
+                <span class="fastival-title">제주올레걷기축제</span>
+                <span class="fastival-date">2022.11.03 ~ 2022.11.05</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./image/fastival07.jpg" alt="제주푸드앤와인페스티벌">
+                <span class="fastival-title">제주푸드앤와인페스티벌 2022</span>
+                <span class="fastival-date">2022.09.01 ~ 2022.11.30</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./image/fastival08.png" alt="제주해녀축제">
+                <span class="fastival-title">제15회 제주해녀축제</span>
+                <span class="fastival-date">2022.09.24 ~ 2022.09.25</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./image/fastival09.jpg" alt="제주고산리유적 선사 축제">
+                <span class="fastival-title">제4회 GO?GO! 제주고산리유적 선사 축제</span>
+                <span class="fastival-date">2022.10.22 ~ 2022.10.23</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./image/fastival10.jpg" alt="SUNSET MOVIE">
+                <span class="fastival-title">981 SUNSET MOVIE</span>
+                <span class="fastival-date">2022.07.02 ~ 2022.09.24</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./image/fastival11.jpg" alt="제주 문화유산 체험프로그램">
+                <span class="fastival-title">제주 문화유산 체험프로그램</span>
+                <span class="fastival-date">2022.03.01 ~ 2022.11.30</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./image/fastival12.jpg" alt="제주민속촌 야간개장 귀몽">
+                <span class="fastival-title">제주민속촌 야간개장 귀몽</span>
+                <span class="fastival-date">2022.07.01 ~ 2022.10.17</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./image/fastival13.jpg" alt="세계유산축전">
+                <span class="fastival-title">2022 세계유산축전 - 제주화산섬과 용암동굴</span>
+                <span class="fastival-date">2022.10.01 ~ 2022.10.16</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./image/fastival14.jpg" alt="스누피가든">
+                <span class="fastival-title">HAPPINESS IS THE GREAT PUMKIN IN SNOOPY GARDEN - 할로윈 행사도 스누피가든에서 즐기자</span>
+                <span class="fastival-date">2022.09.01 ~ 2022.10.31</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <button class="fastival-btn prev">이전</button>
+        <button class="fastival-btn next">다음</button>
+      </article>
+
+      <article class="cont5">
+        <div class="main-tit">
+          <h3>제주 여행자가 공유한 59,520장의 사진이 있습니다!</h3>
+          <p>제주여행공유는 여러분들과 함께 만들어가는 여행 공유플랫폼입니다.</p>
+        </div>
+        <div class="photo-container">
+          <div class="gallery-first-wrap">
+            <ul>
+              <li>
+                <a href="#">
+                  <img src="./image/gallery-first_01.jpg" alt="나미송 머무는곳">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./image/gallery-first_02.jpg" alt="법화사지">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./image/gallery-first_03.jpg" alt="용두암">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./image/gallery-first_04.jpg" alt="아르떼뮤지엄">
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="text-hashtag">
+            <div class="text-wrap">
+              <p>걷고싶은 <br /> 계절 <br /> 가을입니다</p>
+              <b>#가을</b>
+              <span>바로가기</span>              
+            </div>
+
+          </div>
+          <div class="gallery-one">
+            <a href="#">
+              <img src="./image/gallery-one.jpg" alt="섭지코지">
+            </a>
+          </div>
+          <div class="gallery-last-wrap">
+            <ul>
+              <li>
+                <a href="#">
+                  <img src="./image/gallery-right_01.jpg" alt="성산일출봉 (UNESCO 세계자연유산)">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./image/gallery-right_02.jpg" alt="우포토 시네마 갤러리 카페">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./image/gallery-right_03.jpg" alt="사라봉공원">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./image/gallery-right_04.jpg" alt="제주어울림감귤체험농장">
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="cont6">
+
+        <div class="family-container">
+          <div class="family-site-wrap">
+            <div class="swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <a href="#">
+                    <img src="./image/family-site01.png" alt="제주특별자치도">
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#">
+                    <img src="./image/family-site02.png" alt="제주관광공사">
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#">
+                    <img src="./image/family-site03.png" alt="제주특별자치도관광협회">
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#">
+                    <img src="./image/family-site04.png" alt="jejuCVB">
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#">
+                    <img src="./image/family-site05.png" alt="ICC제주">
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#">
+                    <img src="./image/family-site06.png" alt="e제주">
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#">
+                    <img src="./image/family-site07.png" alt="제주면세점">
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#">
+                    <img src="./image/family-site08.png" alt="탐나오">
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#">
+                    <img src="./image/family-site09.png" alt="제주지방기상청">
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#">
+                    <img src="./image/family-site10.png" alt="한국관광공사">
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#">
+                    <img src="./image/family-site11.png" alt="주제주일본국총영사관">
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#">
+                    <img src="./image/family-site12.png" alt="제주지방해양경찰청">
+                  </a>
+                </div>
+              </div>
+              <div class="swiper-button-prev">이전</div>
+              <div class="swiper-button-next">다음</div>
+            </div>
+          </div>
+        </div>        
+      </article>
+    </section>
+
+    <footer>
+      <div class="information-center">
+        <div class="info-wrap">
+          <div class="info-collect">
+            <h4>제주관광정보센터 <span>064) <b>740-6000</b></span></h4>
+            <ul class="info-icon-list">
+              <li><a href="#">장애인 관광정보</a></li>
+              <li><a href="#">제주관광정보센터</a></li>
+              <li><a href="#">제주 관광지도</a></li>
+              <li><a href="#">업체정보수정신청</a></li>
+              <li><a href="#">관광업체등록신청</a></li>
+              <li><a href="#">포토제주</a></li>
+            </ul>
+            <ul class="info-app-list">
+              <li>VISIT JEJU <br /> APP</li>
+              <li><a href="#">Android</a></li>
+              <li><a href="#">IOS</a></li>
+            </ul>
+          </div>
+
+          <div class="info-menu-list">
+            <ul>
+              <h5>여행지</h5>
+              <li><a href="#">관광지</a></li>
+              <li><a href="#">음식</a></li>
+              <li><a href="#">숙박</a></li>
+              <li><a href="#">쇼핑</a></li>
+              <li><a href="#">축제와 행사</a></li>
+            </ul>
+
+            <ul>
+              <h5>추천</h5>
+              <li><a href="#">테마지도</a></li>
+              <li><a href="#">테마여행</a></li>
+              <li><a href="#">일정 추천</a></li>
+              <li><a href="#">여행 큐레이션</a></li>
+              <li><a href="#">슬로우로드</a></li>
+              <li><a href="#">관광지혼잡도</a></li>
+              <li><a href="#">제주문화공연</a></li>
+              <li><a href="#">관광기념품</a></li>
+            </ul>
+            <ul>
+              <h5>쇼핑</h5>
+              <li><a href="#">면세점</a></li>
+              <li><a href="#">탐나오</a></li>
+              <li><a href="#">이제주몰</a></li>
+              <li><a href="#">Deals</a></li>
+            </ul>
+            <ul>
+              <h5>브랜드</h5>
+              <li><a href="#">유네스코</a></li>
+              <li><a href="#">카름스테이</a></li>
+              <li><a href="#">웰니스</a></li>
+              <li><a href="#">같이가치</a></li>
+              <li><a href="#">우수관광사업체</a></li>
+              <li><a href="#">착한가격업소</a></li>
+              <li><a href="#">지오브랜드</a></li>
+            </ul>
+            <ul>
+              <h5>여행정보</h5>
+              <li><a href="#">문화·역사·예술</a></li>
+              <li><a href="#">영상 속 제주</a></li>
+              <li><a href="#">VR로 보는 제주</a></li>
+              <li><a href="#">안전안심가이드</a></li>
+              <li><a href="#">교통</a></li>
+              <li><a href="#">의료기관</a></li>
+              <li><a href="#">안내책자/관광지도</a></li>
+              <li><a href="#">공지사항</a></li>
+              <li><a href="#">관광정보센터</a></li>
+            </ul>
+            <ul>
+              <h5>나의 여행</h5>
+              <li><a href="#">나의 여행일정</a></li>
+              <li><a href="#">찜한 여행</a></li>
+              <li><a href="#">나의 리뷰</a></li>
+              <li><a href="#">방문 여행지</a></li>
+              <li><a href="#">관광문의</a></li>
+              <li><a href="#">틀린정보신고</a></li>
+              <li><a href="#">정보수정</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <address>
+        <ul class="addr-link-list">
+          <li><a href="#"><b>개인정보처리방침</b></a></li>
+          <li><a href="#">이용약관</a></li>
+          <li><a href="#">틀린정보신고</a></li>
+          <li><a href="#">제주관광문의</a></li>
+          <li><a href="#">제주관광사진이용</a></li>
+          <li><a href="#">JEJU TourAPI</a></li>
+          <li><a href="#">제주소식</a></li>
+          <li><a href="#">관광업체등록신청</a></li>
+        </ul>
+        <ul class="address-text">
+          <li>(63122) 제주특별자치도 제주시 선덕로 23(연동) 제주웰컴센터</li>
+          <li>관광문의 : 제주관광공사Tel : 064-740-6000~1FAX : 064-740-6090사업자등록번호 : 616-82-21432</li>
+          <li>관광불편신고 : 제주안내 120콜센터(국번없이 120번)</li>
+        </ul>
+        <p class="copyright">Copyright©Jeju Tourism Organization, All rights reserved.</p>
+        <p>홈페이지에 게시된 이메일 주소가 자동수집되는 것을 거부하며, 위반시 정보통신망법에 의해 처벌될 수 있습니다.</p>
+        <ul class="sns-list">
+          <li><a href="#">페이스북</a></li>
+          <li><a href="#">불로그</a></li>
+          <li><a href="#">인스타그램</a></li>
+        </ul>
+        <div class="authorized-wrap">
+          <span class="science-icon"><a href="#">과학기술정보통신부</a></span> 
+          <span class="authorized-icon">공인리스트</span>
+        </div>
+        
+
+
+
+
+
+
+      </address>
+
+    </footer>
+  </div>
+
+<!-- cont6슬라이드 -->
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+  var footerBnrSlide = new Swiper(".mySwiper", {
+    slidesPerView: 5,
+    spaceBetween: 30,
+    slidesPerGroup: 5,
+    loop: true,
+    loopFillGroupWithBlank: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+</script>
+
+<!-- 상단슬라이드 -->
+<script>
+    const mainVisualSlide = new Swiper('#mainVisual', {
+        loop: true,
+        navigation: {
+          nextEl: '#mainVisual .swiper-button-next',
+          prevEl: '#mainVisual .swiper-button-prev',
+        },
+      });
+
+      const clickSwiper = new Swiper("#clickSwiper", {
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+        },
+      });
+  </script>
+  
+</body>
+</html>

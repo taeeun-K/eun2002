@@ -180,7 +180,7 @@ article.pofolSlide a.slideBtn.next {  right: 10%;  background: url(./../images/s
 
 /* 게임 슬라이드 프로젝트 */
 section#portfolio article.project{padding: 35px 0 60px 0; max-width: 1200px; width: 100%; margin: 0 auto; box-sizing: border-box;}
-section#portfolio article.project ul.Work_list{width: 100%; display: flex; flex-flow: row wrap; justify-content: space-between;}
+section#portfolio article.project ul.Work_list{width: 100%; display: flex; flex-flow: row wrap; justify-content: center;}
 section#portfolio article.project ul.Work_list li{width: 50%; text-align: center;}
 section#portfolio article.project ul.Work_list li a{display: block; height: 200px;}
 section#portfolio article.project ul.Work_list li a span{display: none;}
